@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.Python</name>
+    </assembly>
+    <members>
+        <member name="T:DesignData.SDS2.Python.DynamicPythonImpl">
+             <summary>For internal use.  This wraps python objects and gives access
+             for .Net users.  This class is visible, but should always be used
+             with the special "dynamic" type.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.getCPtr(DesignData.SDS2.Python.DynamicPythonImpl)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.TryGetAttribute(System.String)">
+             <summary>For internal use.  This fetches a named property from
+             a python object and returns a DynamicPython wrapper for it.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.IsCallable">
+             <summary>For internal use.  Query if this is a python callable (a function).</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.ClearArguments">
+             <summary>For internal use.  Call this before processing arguments.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.AddArgument(System.dynamic)">
+             <summary>For internal use.  Call this to add a python object as the next argument</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.AddArgument">
+             <summary>For internal use.  Call this to add None/null to the argument list</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.Call">
+             <summary>For internal use.  Finally call this to call the python
+             function and return its return value</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPythonImpl.ToString">
+             <summary>Returns the result of str(self) from python</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Python.Module">
+             <summary>Access to pythyon modules</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.Module.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.Module.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.Module.Import(System.String)">
+             <summary>Import a python module and return that module.  You can then
+             reference classes inside the module:
+             </summary>
+             <example>
+             <code>
+             dynamic module = Python.Module.Import("my_module");
+             dynamic cls_instance = module.MyClass("an argument for the constructor");
+             </code>
+             </example>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Python.Python">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Python.DynamicPython">
+             <summary>For internal use.  This wraps python objects and gives access
+             for .Net users.  This class is visible, but should always be used
+             with the special "dynamic" type.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPython.ToString">
+             <summary>
+               Return the string representation of the python object.
+               overriding object.ToString()
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPython.TryInvoke(System.Dynamic.InvokeBinder,System.Object[],System.Object@)">
+             <summary>
+               If this property is a python callable, you can call it
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPython.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+             <summary>For internal use.  This fetches a named property from
+             a python object and returns a DynamicPython wrapper for it.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Python.DynamicPython.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+             <summary>Sets an attribute on a python object.</summary>
+            </member>
+    </members>
+</doc>

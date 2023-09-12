@@ -1,0 +1,3311 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.Primitives</name>
+    </assembly>
+    <members>
+        <member name="T:DesignData.SDS2.Primitives.Point3D">
+             <summary>
+             The Point3D class can represent a position in 3D space, or a vector in 3D space.
+             Some operations assume that the interpretation is a vector.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that intermediate arithmetic is done in floating point, and thus some
+             operations may have intermediate results that overflow, underflow or
+             experience cancellation error, like all floating-point arithmetic.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Point3D.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.#ctor">
+             <summary>
+             Instantiates a point with X, Y, and Z all zero
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.#ctor(DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Instantiates a point equal to the given point
+             </summary>
+             <param name="pt">
+             The point whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.#ctor(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Instantiates a point with the X, Y, and Z values of the given vector
+             </summary>
+             <param name="vector">
+             The point whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.#ctor(System.Double,System.Double,System.Double)">
+             <summary>
+             Instantiates a point with the given X, Y, and Z values
+             </summary>
+             <param name="x">
+             The X value for the new point
+             </param>
+             <param name="y">
+             The Y value for the new point
+             </param>
+             <param name="z">
+             The Z value for the new point
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.GetX">
+             <summary>
+             The X-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.GetY">
+             <summary>
+             The Y-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.GetZ">
+             <summary>
+             The Z-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.op_Subtraction(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Return a vector which is the difference of the two given points
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.EpsilonEquals(DesignData.SDS2.Primitives.Point3D,System.Double)">
+             <summary>
+             Returns true if the squared distance between this point and the given point
+             is less than distance_squared.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that EpsilonEquals can violate the transitivity rule of equality
+             comparison, because there are many groups of points (p, q, r) where
+             p.EpsilonEquals(q) and p.EpsilonEquals(r) but not q.EpsilonEquals(r).
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other point
+             </param>
+             <param name="distanceSquared">
+             The square of the smallest distance value that should be considered different
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.BinEquals(DesignData.SDS2.Primitives.Point3D,System.Double)">
+             <summary>
+             Returns true if this point and the given point fall within the same "bin".
+             A "bin" is a cubic region of space approximately binSize on a side.
+             </summary>
+            
+             <remarks>
+             <para>
+             Unlike EpsilonEquals, BinEquals maintains the transitive rule of equality,
+             but some points which are arbitrarily close together in distance are
+             unequal according got EpsilonEquals, because they fall into different bins.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other point
+             </param>
+             <param name="binSize">
+             The size of a bin.
+             </param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.Interpolate(DesignData.SDS2.Primitives.Point3D,System.Double)">
+             <summary>
+             Performs linear interpolation between this point and the <c>other</c>
+             </summary>
+            
+             <remarks>
+             <para>
+             This is equal to <c>this + (other - this) * t</c>.
+             </para>
+            
+             <para>
+             Note that due to floating point arithmetic, <c>p.project(q, 1.0)</c>
+             may not be exactly equal to <c>q</c>.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other point
+             </param>
+             <param name="t">
+             Controls the mixing between the two points.  This function is defined
+             for all values of <c>t</c>, though strictly speaking only values in the
+             interval [0,1] are interpolations, and other values are extrapolations.
+             </param>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Point3D.X">
+             <summary>
+             The X-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Point3D.Y">
+             <summary>
+             The Y-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Point3D.Z">
+             <summary>
+             The Z-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the X, Y, and Z values
+             will not necessarily yield the same point.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.  True for instances which
+             are Equals(), otherwise False with high probability.  Specific hash
+             values are implementation-dependent.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.Equals(System.Object)">
+            
+             <summary>
+             Checks if each element of the points are equal using Double.Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.op_Equality(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Point3D)">
+            
+             <summary>
+             Checks if each element of the points are equal using == on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point3D.op_Inequality(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Point3D)">
+            
+             <summary>
+             Checks if any element of the points are unequal using != on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Layout3DNode">
+             <summary>Represents one node in a Layout3D</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.getCPtr(DesignData.SDS2.Primitives.Layout3DNode)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.#ctor">
+             <summary>Create an empty Layout3DNode</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.#ctor(DesignData.SDS2.Primitives.Point3D,System.UInt32,System.UInt32,System.Boolean,System.Double,System.Int32)">
+             <summary>Create a layout node from existing data</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetPoint">
+             <summary>The point, in 3-dimensional space, that this node exists at</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetName">
+             <summary>The "name" of the vertex generated for detailing
+             purposes.  Inside detailing templates, this vertex can be
+             referred to by this numeric identifier</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetFace">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetIsInteriorEdge">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetRadius">
+             <summary>When set, this makes this a radiused corner with a
+             radius of radius.  The final layout will be segmented to
+             approximate this radius.</summary>
+             <remarks>Don't forget to set SegmentCount to something greater than 1</remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetSegmentCount">
+             <summary>The number of segments to use for this radiused corner</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.Transform(DesignData.SDS2.Primitives.Matrix)">
+             <summary>Move and rotate this node using the given matrix</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetDepth">
+             <summary>The direction of depth for the layout between the current and next node.
+                      Typically this should be perpendicular to the segment</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3DNode.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.Point">
+             <summary>The point, in 3-dimensional space, that this node exists at</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.Name">
+             <summary>The "name" of the vertex generated for detailing
+             purposes.  Inside detailing templates, this vertex can be
+             referred to by this numeric identifier</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.Face">
+             </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.IsInteriorEdge">
+             </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.Radius">
+             <summary>When set, this makes this a radiused corner with a
+             radius of radius.  The final layout will be segmented to
+             approximate this radius.</summary>
+             <remarks>Don't forget to set SegmentCount to something greater than 1</remarks>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.SegmentCount">
+             <summary>The number of segments to use for this radiused corner</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3DNode.Depth">
+             <summary>The direction of depth for the layout between the current and next node.
+                      Typically this should be perpendicular to the segment</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PolygonList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.PolygonList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.PolygonList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.PolygonList.PolygonListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.PolygonList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.PolygonList.#ctor(DesignData.SDS2.Primitives.PolygonList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.PolygonList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Primitives">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.PenColor">
+             <summary>Pens tied to specific SDS2 colors.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Unspecified">
+             <summary>Unspecified, indicating the default should be used</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.White">
+             <summary>White</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Red">
+             <summary>Red</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Yellow">
+             <summary>Yellow</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Green">
+             <summary>Green</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Cyan">
+             <summary>Cyan</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Blue">
+             <summary>Blue</summary> 
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.PenColor.Magenta">
+             <summary>Magenta</summary> 
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Vector2D">
+             <summary>
+             The Vector2D class represents a vector in 2D space.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that intermediate arithmetic is done in floating point, and thus some
+             operations may have intermediate results that overflow, underflow or
+             experience cancellation error, like all floating-point arithmetic.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Vector2D.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.#ctor">
+             <summary>
+             Instantiates a vector with X and Y set to zero
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.#ctor(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Instantiates a vector equal to the given vector
+             </summary>
+             <param name="vector">
+             The vector whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.#ctor(DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             Instantiates a vector with the same X and Y values as the given point
+             </summary>
+             <param name="point">
+             The point whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.#ctor(System.Double,System.Double)">
+             <summary>
+             Instantiates a vector with the given X and Y values
+             </summary>
+             <param name="x">
+             The X value for the new vector
+             </param>
+             <param name="y">
+             The Y value for the new vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.GetX">
+             <summary>
+             The X-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.GetY">
+             <summary>
+             The Y-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Dot(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Compute the dot product between this vector and another given vector,
+             </summary>
+             <param name="pt">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Normalize">
+             <summary>
+             Return a vector with the same direction as this vector, but with length 1.0.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note: If the vector is a zero-vector or any element is not a finite value,
+             the result is undefined.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.GetLength">
+             <summary>
+             The length (magnitude) of this vector, or the distance from the origin
+             to this vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Angle(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return the angle in radians from this vector to a given vector.
+             The returned value is always within the range [0,pi].
+             </summary>
+             <param name="pt">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Addition(DesignData.SDS2.Primitives.Vector2D,DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return a vector which is the sum of the two given vectors
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Addition(DesignData.SDS2.Primitives.Point2D,DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return a point which is the sum of the given point and given vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Subtraction(DesignData.SDS2.Primitives.Point2D,DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return a point which is the difference of the given point and given vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Addition(DesignData.SDS2.Primitives.Vector2D,DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             Return a point which is the sum of the given point and given vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Subtraction(DesignData.SDS2.Primitives.Vector2D,DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return a vector which is the difference of the two given vectors
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_UnaryNegation(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return the element-wise negation of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Multiply(DesignData.SDS2.Primitives.Vector2D,System.Double)">
+             <summary>
+             Return a vector with each element multiplied by the given scalar
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Multiply(System.Double,DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return a vector with each element multiplied by the given scalar
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Division(DesignData.SDS2.Primitives.Vector2D,System.Double)">
+             <summary>
+             Return a vector with each element divided by the given scalar
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.EpsilonEquals(DesignData.SDS2.Primitives.Vector2D,System.Double)">
+             <summary>
+             Returns true if the squared difference between this vector and the given vector
+             is less than difference_squared.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that EpsilonEquals can violate the transitivity rule of equality
+             comparison, because there are many groups of points (p, q, r) where
+             p.EpsilonEquals(q) and p.EpsilonEquals(r) but not q.EpsilonEquals(r).
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+             <param name="differenceSquared">
+             The square of the smallest difference value that should be considered different
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.BinEquals(DesignData.SDS2.Primitives.Vector2D,System.Double)">
+             <summary>
+             Returns true if this vector and the given vector fall within the same "bin".
+             A "bin" is a cubic region of vector space approximately binSize on a side.
+             </summary>
+            
+             <remarks>
+             <para>
+             Unlike EpsilonEquals, BinEquals maintains the transitive rule of equality,
+             but some vectors which are arbitrarily close together in distance are
+             unequal accorind got EpsilonEquals, because they fall into different bins.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+             <param name="binSize">
+             The size of a bin.
+             </param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.ScalarProjection(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Returns the scalar projection of this vector onto <c>other</c>
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.VectorProjection(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Returns the vector projection of this vector onto <c>other</c>
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Bisector(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Return a unit vector that bisects the two given vectors
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.IsNearlyPerpendicular(DesignData.SDS2.Primitives.Vector2D,System.Double)">
+             <summary>
+             Return <c>true</c> when the tangent of the difference between the
+             vectors' angles and a right angle is within less than <c>tan_tol</c>.
+             For instance, if tan_tol is 0.01745, it tests that the vectors are within
+             approximately 1 degree of perpendicular.
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+             <param name="tan_tol">
+             The tangent of the angle that specifies the desired tolerance.  Note that for small angles x,
+             tan x ~= x, so you can also think of this nearly a tolerance in radians.
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.IsNearlyParallel(DesignData.SDS2.Primitives.Vector2D,System.Double)">
+             <summary>
+             Return <c>true</c> when the absolute value of the tangent of the angle
+             between the two vectors is less than <c>tan_tol</c>.  For instance, if <c>tan_tol</c>
+             is 0.01745, it tests that the vectors are within approximately 1 degree of parallel.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that vectors in the exact opposite direction are considered
+             "parallel" for the purposes of this test.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+             <param name="tan_tol">
+             The tangent of the angle that specifies the desired tolerance.  Note that for small angles x,
+             tan x ~= x, so you can also think of this nearly a tolerance in radians.
+             </param>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector2D.X">
+             <summary>
+             The X-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector2D.Y">
+             <summary>
+             The Y-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector2D.Length">
+             <summary>
+             The length (magnitude) of this vector, or the distance from the origin
+             to this vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the X and Y values
+             will not necessarily yield the same point.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.  True for instances which
+             are Equals(), otherwise False with high probability.  Specific hash
+             values are implementation-dependent.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.Equals(System.Object)">
+            
+             <summary>
+             Checks if each element of the points are equal using Double.Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Equality(DesignData.SDS2.Primitives.Vector2D,DesignData.SDS2.Primitives.Vector2D)">
+            
+             <summary>
+             Checks if each element of the points are equal using == on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector2D.op_Inequality(DesignData.SDS2.Primitives.Vector2D,DesignData.SDS2.Primitives.Vector2D)">
+            
+             <summary>
+             Checks if any element of the points are unequal using != on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Date.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Date.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Date.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Date.#ctor(System.UInt32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Layout3D">
+             <summary>Represents a list of points in 3-dimensional space, in
+             order, often forming a closed loop.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.getCPtr(DesignData.SDS2.Primitives.Layout3D)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.#ctor">
+             <summary>An empty layout</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D._indexoperator(System.UInt32)">
+             <summary>Get the node at index</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.size">
+             <summary>The number of nodes in this layout</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Add(DesignData.SDS2.Primitives.Layout3DNode)">
+             <summary>Add a node to the end of the layout</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Pop">
+             <summary>Remove the node at the end of the layout</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Clear">
+             <summary>Clear all nodes from the layout</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.RemoveAt(System.Int32)">
+             <summary>Remove a node at the given index</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.CloseLayout">
+             <summary>Add a node which would make this a closed loop</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.GetIsClosed">
+             <summary>True if this is a losed loop</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.GetLength">
+             <summary>Gets the sum of the length of every side of the layout</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Transform(DesignData.SDS2.Primitives.Matrix)">
+             <summary>Move and rotate this whole layout using the given matrix</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.SetDepthVectors(DesignData.SDS2.Primitives.Vector3D,System.Boolean)">
+             <summary>Set the depth vectors on each Layout3DNode.  If uniform
+             is true, all nodes will be given the specified vector.  If
+             uniform is false, the specified vector will be given to the first
+             node, and vectors subsequent nodes will bisect the angle between
+             adjacent layout segments at the rotation of the depth vector on
+             the previous node.  </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.SetDepthVectors(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>Set the depth vectors on each Layout3DNode.  If uniform
+             is true, all nodes will be given the specified vector.  If
+             uniform is false, the specified vector will be given to the first
+             node, and vectors subsequent nodes will bisect the angle between
+             adjacent layout segments at the rotation of the depth vector on
+             the previous node.  </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3D.Count">
+             <summary>The number of nodes in this layout</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3D.LayoutLength">
+             <summary>Gets the sum of the length of every side of the layout</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Layout3D.Item(System.Int32)">
+            <summary>Get the node at index</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Layout3D.Enumerator">
+             <summary>An enumerator for the parent class</summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Layout3D.GetEnumerator">
+             <summary>Get the enumerator object</summary>
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.CharQ.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.CharQ.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.CharQ.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.CharQ.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.CharQ.#ctor(DesignData.SDS2.Primitives.CharQ)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.CharQ.#ctor(System.Boolean,System.Char)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.FloatQ.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.FloatQ.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.FloatQ.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.FloatQ.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.FloatQ.#ctor(DesignData.SDS2.Primitives.FloatQ)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.FloatQ.#ctor(System.Boolean,System.Single)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Polygon">
+             <summary>
+             A Polygon is piece of Surface and is composed of Edges. A Polygon
+             must not be self-crossing and must have all its edges in a single
+             plane.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.getCPtr(DesignData.SDS2.Primitives.Polygon)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32,System.Boolean)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32,System.Boolean,System.Int32)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32,System.Boolean)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32,System.Int32)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String,System.Int32)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList,System.String)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.#ctor(DesignData.SDS2.Primitives.EdgeList)">
+             <summary>
+             Create a Polygon for a Surface.
+             </summary>
+             <param name="edges">The sequence of Edges that comprise this Polygon.</param>
+             <param name="hexcolor">A string beginning with "#" followed by six
+             hexidecimal digits specifying a color.</param>
+             <param name="faceNumber">FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.</param>
+             <param name="neutralSurface">Specifies which neutral axis the polygon belongs
+             to, if any.</param>
+             <param name="radiusSurface">Indicates if the polygon is part of a curve.</param>
+             <param name="surfaceType">SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).</param>
+             <param name="intensity">Specifies color intensity.</param>
+             <param name="cutOperation">Indicates the type of cut that created this polygon.</param>
+             <param name="cutSurface">Indicates if the polygon is part of a surface created by a cut.</param>
+             <param name="layout">Indicates if the polygon specifies a layout.</param>
+            
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.Edges">
+             <summary>
+             The sequence of Edges that comprise this Polygon.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.SurfaceType">
+             <summary>
+            
+             SurfaceType is an integer indicating the polygon is an inside
+             surface (1), cap (2), cross section(3), pattern (4), weld (5),
+             hole face (6), hole side (8), neutral axis (7), or none of these
+             (0).
+            
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.FaceNumber">
+             <summary>
+            
+             FaceNumber is an integer specifying what face the polygon is a
+             part of.  If the polygon is not on any face, FaceNumber is 0.
+            
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.CutOperation">
+             <summary>
+            
+             CutOperation indicates the type of cut that created this polygon:
+             CUT_{NONE,BURN,SAW,SHEAR,SQUARE,MILL,GENERIC}
+            
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.Intensity">
+             <summary>
+             Intensity is an integer specifying color intensity.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.Hexcolor">
+             <summary>
+            
+             Hexcolor is a string beginning with "#" followed by six
+             hexidecimal digits specifying a color.
+            
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.IsRadiusSurface">
+             <summary>
+             IsRadiusSurface indicates if the polygon is part of a curve.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.IsCutSurface">
+             <summary>
+             IsCutSurface indicates if the polygon is part of a cut.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.IsLayout">
+             <summary>
+             IsLayout indicates if the polygon specifies a layout.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.NeutralSurface">
+             <summary>
+            
+             NeutralSurface specifies which neutral axis the polygon belongs
+             to, if any.
+            
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetGeometry">
+             <summary>
+             Indicates if A, B, C, D, BoundBLF, BoundTRB are valid.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetA">
+             <summary>
+            
+             A is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+              </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetB">
+             <summary>
+            
+             B is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+              </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetC">
+             <summary>
+            
+             C is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetD">
+             <summary>
+            
+             D is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+              </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetBoundTRB">
+             <summary>This point is the top, right, back point of the Polygon
+             bounding box.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetBoundBLF">
+             <summary>This point is the bottom, left, front point of the Polygon
+             bounding box.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.Equals(DesignData.SDS2.Primitives.Polygon,System.Double)">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Polygon.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.IsValidGeometry">
+             <summary>
+             Indicates if A, B, C, D, BoundBLF, BoundTRB are valid.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.A">
+             <summary>
+            
+             A is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+              </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.B">
+             <summary>
+            
+             B is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+              </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.C">
+             <summary>
+            
+             C is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.D">
+             <summary>
+            
+             D is a coefficient of the plane equation specifying the plane
+             that the polygon is in.
+            
+              </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.BoundTRB">
+             <summary>This point is the top, right, back point of the Polygon
+             bounding box.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Polygon.BoundBLF">
+             <summary>This point is the bottom, left, front point of the Polygon
+             bounding box.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.BoundingBox2D">
+             <summary>
+             The BoundingBox2D class represents the axis-aligned area
+             enclosed by a two points in 2D space.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.BoundingBox2D.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.#ctor(DesignData.SDS2.Primitives.BoundingBox2D)">
+             <summary>
+             Instantiates a bounding box as a copy of another bounding box.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.#ctor(DesignData.SDS2.Primitives.Point2D,DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             Instantiates a bounding box that contains both points
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetMax">
+             <summary>
+             The maximum X and Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetMin">
+             <summary>
+             The minimum X and Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetMaxY">
+             <summary>
+             The maximum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetMaxX">
+             <summary>
+             The maximum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetMinY">
+             <summary>
+             The minimum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetMinX">
+             <summary>
+             The minimum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetWidth">
+             <summary>
+             The difference bewteen the maximum X and minimum X
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetHeight">
+             <summary>
+             The difference bewteen the maximum Y and minimum Y
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetArea">
+             <summary>
+             The area of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.Expanded(System.Double)">
+             <summary>
+             A new bounding box expanded on all sides by the specified amount
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.Unioned(DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             A new bounding box that includes the current bounds and the specified point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.DoesOverlap(DesignData.SDS2.Primitives.BoundingBox2D)">
+             <summary>
+             True iff the two bounds overlap
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.DoesEnclose(DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             True iff the specified point is within bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.ShortestVectorToPoint(DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             The shortest vector from the bounds to the specified point
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.Min">
+             <summary>
+             The minimum X and Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.Max">
+             <summary>
+             The maximum X and Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.MinY">
+             <summary>
+             The minimum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.MinX">
+             <summary>
+             The minimum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.MaxX">
+             <summary>
+             The maximum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.MaxY">
+             <summary>
+             The maximum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.Width">
+             <summary>
+             The difference bewteen the maximum X and minimum X
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.Height">
+             <summary>
+             The difference bewteen the maximum Y and minimum Y
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox2D.Area">
+             <summary>
+             The area of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the Min and Max values
+             will not necessarily yield the same bounds.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.Equals(System.Object)">
+            
+             <summary>
+             Checks to see if the Min and Max are equal using Double.Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The bounds to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.op_Equality(DesignData.SDS2.Primitives.BoundingBox2D,DesignData.SDS2.Primitives.BoundingBox2D)">
+            
+             <summary>
+             Checks on Min and Max.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="a">
+             The bounds to compare
+             </param>
+             <param name="b">
+             The bounds to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox2D.op_Inequality(DesignData.SDS2.Primitives.BoundingBox2D,DesignData.SDS2.Primitives.BoundingBox2D)">
+            
+             <summary>
+             Checks inequality on Min and Max
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="a">
+             The bounds to compare
+             </param>
+             <param name="b">
+             The bounds to compare to
+             </param>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.ByteArray.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.ByteArray.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.ByteArray.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.ByteArray.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.ByteArray.#ctor(System.IntPtr,System.UInt32,System.Int32)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.ByteArray.#ctor(System.IntPtr,System.UInt32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Vector3D">
+             <summary>
+             The Vector3D class represents a vector in 3D space.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that intermediate arithmetic is done in floating point, and thus some
+             operations may have intermediate results that overflow, underflow or
+             experience cancellation error, like all floating-point arithmetic.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Vector3D.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.#ctor">
+             <summary>
+             Instantiates a vector with X, Y, and Z all zero
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.#ctor(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Instantiates a vector equal to the given vector
+             </summary>
+             <param name="vector">
+             The vector whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.#ctor(DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Instantiates a vector with the same X, Y, Z values as the given point
+             </summary>
+             <param name="point">
+             The point whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.#ctor(System.Double,System.Double,System.Double)">
+             <summary>
+             Instantiates a vector with the given X, Y, and Z values
+             </summary>
+             <param name="x">
+             The X value for the new vector
+             </param>
+             <param name="y">
+             The Y value for the new vector
+             </param>
+             <param name="z">
+             The Z value for the new vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.GetX">
+             <summary>
+             The X-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.GetY">
+             <summary>
+             The Y-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.GetZ">
+             <summary>
+             The Z-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Dot(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Compute the dot product between this vector and another given vector,
+             </summary>
+             <param name="pt">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Cross(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Compute the cross product between this vector and another given vector,
+             </summary>
+             <param name="pt">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Normalize">
+             <summary>
+             Return a vector with the same direction as this vector, but with length 1.0.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note: If the vector is a zero-vector or any element is not a finite value,
+             the result is undefined.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.GetLength">
+             <summary>
+             The length (magnitude) of this vector, or the distance from the origin
+             to this vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Angle(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return the angle in radians from this vector to a given vector.
+             The returned value is always within the range [0,pi].
+             </summary>
+             <param name="pt">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Addition(DesignData.SDS2.Primitives.Vector3D,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return a vector which is the sum of the two given vectors
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Addition(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return a point which is the sum of the given point and given vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Subtraction(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return a point which is the difference of the given point and given vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Addition(DesignData.SDS2.Primitives.Vector3D,DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Return a point which is the sum of the given point and given vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Subtraction(DesignData.SDS2.Primitives.Vector3D,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return a vector which is the difference of the two given vectors
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_UnaryNegation(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return the element-wise negation of the vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Multiply(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Return a vector with each element multiplied by the given scalar
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Multiply(System.Double,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return a vector with each element multiplied by the given scalar
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Division(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Return a vector with each element divided by the given scalar
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.EpsilonEquals(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Returns true if the squared difference between this vector and the given vector
+             is less than difference_squared.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that EpsilonEquals can violate the transitivity rule of equality
+             comparison, because there are many groups of points (p, q, r) where
+             p.EpsilonEquals(q) and p.EpsilonEquals(r) but not q.EpsilonEquals(r).
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+             <param name="differenceSquared">
+             The square of the smallest difference value that should be considered different
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.BinEquals(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Returns true if this vector and the given vector fall within the same "bin".
+             A "bin" is a cubic region of vector space approximately binSize on a side.
+             </summary>
+            
+             <remarks>
+             <para>
+             Unlike EpsilonEquals, BinEquals maintains the transitive rule of equality,
+             but some vectors which are arbitrarily close together in distance are
+             unequal accorind got EpsilonEquals, because they fall into different bins.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+             <param name="binSize">
+             The size of a bin.
+             </param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.ScalarProjection(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Returns the scalar projection of this vector onto <c>other</c>
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.VectorProjection(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Returns the vector projection of this vector onto <c>other</c>
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Interpolate(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Performs linear interpolation between this vector and the <c>other</c>
+             </summary>
+            
+             <remarks>
+             <para>
+             This is equal to <c>this + (other - this) * t</c>.
+             </para>
+            
+             <para>
+             Note that due to floating vector arithmetic, <c>p.project(q, 1.0)</c>
+             may not be exactly equal to <c>q</c>.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+             <param name="t">
+             Controls the mixing between the two vectors.  This function is defined
+             for all values of <c>t</c>, though strictly speaking only values in the
+             interval [0,1] are interpolations, and other values are extrapolations.
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Bisector(DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return a unit vector that bisects the two given vectors
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.IsNearlyPerpendicular(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Return <c>true</c> when the tangent of the difference between the
+             vectors' angles and a right angle is within less than <c>tan_tol</c>.
+             For instance, if tan_tol is 0.01745, it tests that the vectors are within
+             approximately 1 degree of perpendicular.
+             </summary>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+             <param name="tan_tol">
+             The tangent of the angle that specifies the desired tolerance.  Note that for small angles x,
+             tan x ~= x, so you can also think of this nearly a tolerance in radians.
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.IsNearlyParallel(DesignData.SDS2.Primitives.Vector3D,System.Double)">
+             <summary>
+             Return <c>true</c> when the absolute value of the tangent of the angle
+             between the two vectors is less than <c>tan_tol</c>.  For instance, if <c>tan_tol</c>
+             is 0.01745, it tests that the vectors are within approximately 1 degree of parallel.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that vectors in the exact opposite direction are considered
+             "parallel" for the purposes of this test.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other vector
+             </param>
+            
+             <param name="tan_tol">
+             The tangent of the angle that specifies the desired tolerance.  Note that for small angles x,
+             tan x ~= x, so you can also think of this nearly a tolerance in radians.
+             </param>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector3D.X">
+             <summary>
+             The X-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector3D.Y">
+             <summary>
+             The Y-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector3D.Z">
+             <summary>
+             The Z-coordinate of the vector
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Vector3D.Length">
+             <summary>
+             The length (magnitude) of this vector, or the distance from the origin
+             to this vector
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the X, Y, and Z values
+             will not necessarily yield the same point.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.  True for instances which
+             are Equals(), otherwise False with high probability.  Specific hash
+             values are implementation-dependent.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.Equals(System.Object)">
+            
+             <summary>
+             Checks if each element of the points are equal using Double.Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Equality(DesignData.SDS2.Primitives.Vector3D,DesignData.SDS2.Primitives.Vector3D)">
+            
+             <summary>
+             Checks if each element of the points are equal using == on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Vector3D.op_Inequality(DesignData.SDS2.Primitives.Vector3D,DesignData.SDS2.Primitives.Vector3D)">
+            
+             <summary>
+             Checks if any element of the points are unequal using != on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.BoundingBox3D">
+             <summary>
+             The BoundingBox3D class represents the axis-aligned area
+             enclosed by a two points in 3D space.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.BoundingBox3D.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.#ctor(DesignData.SDS2.Primitives.BoundingBox3D)">
+             <summary>
+             Instantiates a bounding box as a copy of another bounding box.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.#ctor(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Instantiates a bounding box that contains both points
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMax">
+             <summary>
+             The maximum X, Y, and Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMin">
+             <summary>
+             The minimum X, Y, and Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMaxY">
+             <summary>
+             The maximum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMaxX">
+             <summary>
+             The maximum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMaxZ">
+             <summary>
+             The maximum Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMinY">
+             <summary>
+             The minimum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMinX">
+             <summary>
+             The minimum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetMinZ">
+             <summary>
+             The minimum Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetWidth">
+             <summary>
+             The difference bewteen the maximum X and minimum X
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetHeight">
+             <summary>
+             The difference bewteen the maximum Y and minimum Y
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetDepth">
+             <summary>
+             The difference bewteen the maximum Z and minimum Z
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetVolume">
+             <summary>
+             The volume of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.Expanded(System.Double)">
+             <summary>
+             A new bounding box expanded on all sides by the specified amount
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.Unioned(DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             A new bounding box that includes the current bounds and the specified point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.DoesOverlap(DesignData.SDS2.Primitives.BoundingBox3D)">
+             <summary>
+             True iff the two bounds overlap
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.DoesEnclose(DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             True iff the specified point is within bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.ShortestVectorToPoint(DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             The shortest vector from the bounds to the specified point
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.Min">
+             <summary>
+             The minimum X, Y, and Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.Max">
+             <summary>
+             The maximum X, Y, and Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.MinY">
+             <summary>
+             The minimum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.MinX">
+             <summary>
+             The minimum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.MinZ">
+             <summary>
+             The minimum Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.MaxX">
+             <summary>
+             The maximum X-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.MaxY">
+             <summary>
+             The maximum Y-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.MaxZ">
+             <summary>
+             The maximum Z-coordinate of the bounds
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.Width">
+             <summary>
+             The difference bewteen the maximum X and minimum X
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.Height">
+             <summary>
+             The difference bewteen the maximum Y and minimum Y
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.Depth">
+             <summary>
+             The difference bewteen the maximum Z and minimum Z
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.BoundingBox3D.Volume">
+             <summary>
+             The volume of the bounds
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the Min and Max values
+             will not necessarily yield the same bounds.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.Equals(System.Object)">
+            
+             <summary>
+             Checks to see if the Min and Max are equal using Double.Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The bounds to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.op_Equality(DesignData.SDS2.Primitives.BoundingBox3D,DesignData.SDS2.Primitives.BoundingBox3D)">
+            
+             <summary>
+             Checks on Min and Max.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="a">
+             The bounds to compare
+             </param>
+             <param name="b">
+             The bounds to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoundingBox3D.op_Inequality(DesignData.SDS2.Primitives.BoundingBox3D,DesignData.SDS2.Primitives.BoundingBox3D)">
+            
+             <summary>
+             Checks inequality on Min and Max
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="a">
+             The bounds to compare
+             </param>
+             <param name="b">
+             The bounds to compare to
+             </param>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Color">
+             <summary>A color compatible with SDS2's colors.  This object
+             knows how to translate to and from SDS2 pen numbers.  It works on a
+             0-255 rgba color scale.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Color.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+             <summary>Create a color from rgba values, from 0-255</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.#ctor(System.String)">
+             <summary>Create a color from a hash or pound string, like in html:  "#E6E6FA"</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.#ctor(DesignData.SDS2.Primitives.PenColor)">
+             <summary>Create a color from the PenColor</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.GetNearestPen">
+             <summary>Get the closest pen for this color.  This is primarily used
+             internally in SDS2 for pen plotter support.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.ToString">
+             <summary>Get the pound or hash string value of this color</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.op_Equality(DesignData.SDS2.Primitives.Color,DesignData.SDS2.Primitives.Color)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.op_Inequality(DesignData.SDS2.Primitives.Color,DesignData.SDS2.Primitives.Color)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Color.Equals(System.Object)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Surface">
+             <summary>
+            
+             A Surface is composed of Polygons.  The Polygons of a Surface must be
+             connected.  Adjacent coplanar Polygons must not form a "T" with their
+             shared edges.  The Polygons of a Surface typically enclose a volume,
+             have no overlaps, and touch only at Edges.
+            
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.getCPtr(DesignData.SDS2.Primitives.Surface)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.#ctor(DesignData.SDS2.Primitives.Surface)">
+             <summary>
+             Create a Surface equal to the given Surface.
+             </summary>
+             <param name="surface">This is the Surface to copy.</param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.#ctor(DesignData.SDS2.Primitives.PolygonList,System.Boolean)">
+             <summary> Create a Surface from Polygons. </summary>
+            
+             <param name="polygons">polygons is a list of Polygons from which to create a surface.</param>
+             <param name="updateGeometry">UpdateGeometry() is called at the
+             end of construction when updateGeometry is true</param>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidPolygonException">
+             If edges of a Polygon are not coplanar or a Polygon has less than 2 vertices.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.#ctor(DesignData.SDS2.Primitives.PolygonList)">
+             <summary> Create a Surface from Polygons. </summary>
+            
+             <param name="polygons">polygons is a list of Polygons from which to create a surface.</param>
+             <param name="updateGeometry">UpdateGeometry() is called at the
+             end of construction when updateGeometry is true</param>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidPolygonException">
+             If edges of a Polygon are not coplanar or a Polygon has less than 2 vertices.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.#ctor">
+             <summary> Create an empty Surface. </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Transform(DesignData.SDS2.Primitives.Matrix)">
+             <summary> Transform the Surface to a new coordinate system. </summary>
+             <param name="matrix">This is the matrix specfiying the new coordinate system. </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.UpdateGeometry">
+             <summary>Update bounding box and Polygon plane fields.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Triangulate">
+             <summary>Decompose Polygons into triangles.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.GetGeometry">
+             <summary>
+             Indicates BoundBLF and BoundTRB are valid.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.GetBoundTRB">
+             <summary>This point is the top, right, back point of the Surface
+             bounding box.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.GetBoundBLF">
+             <summary>This point is the bottom, left, front point of the Surface
+             bounding box.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.GetPolygons">
+             <summary>Get the list of Polygons that comprise the Surface.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Validate(System.String,System.Boolean)">
+             <summary>Analyze the surface for errors and fix them if possible.
+             </summary>
+            
+             <param name="prefix">prefix is added to the beginning of most
+             lines of the analysis.  This is useful for distinguishing between
+             surfaces when validating multiple surfaces.  </param>
+            
+             <param name="verbose">Output updated polygons for each error.</param>
+            
+             <returns>Analysis of errors in the Surface</returns>
+            
+             <remarks>This method is slow and should typically be used only
+             for debugging purposes, and not in production code. The content
+             and format of the returned analysis string may not be consistent
+             between SDS2 versions. </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Validate(System.String)">
+             <summary>Analyze the surface for errors and fix them if possible.
+             </summary>
+            
+             <param name="prefix">prefix is added to the beginning of most
+             lines of the analysis.  This is useful for distinguishing between
+             surfaces when validating multiple surfaces.  </param>
+            
+             <param name="verbose">Output updated polygons for each error.</param>
+            
+             <returns>Analysis of errors in the Surface</returns>
+            
+             <remarks>This method is slow and should typically be used only
+             for debugging purposes, and not in production code. The content
+             and format of the returned analysis string may not be consistent
+             between SDS2 versions. </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Validate">
+             <summary>Analyze the surface for errors and fix them if possible.
+             </summary>
+            
+             <param name="prefix">prefix is added to the beginning of most
+             lines of the analysis.  This is useful for distinguishing between
+             surfaces when validating multiple surfaces.  </param>
+            
+             <param name="verbose">Output updated polygons for each error.</param>
+            
+             <returns>Analysis of errors in the Surface</returns>
+            
+             <remarks>This method is slow and should typically be used only
+             for debugging purposes, and not in production code. The content
+             and format of the returned analysis string may not be consistent
+             between SDS2 versions. </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Equals(DesignData.SDS2.Primitives.Surface,System.Double)">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.Equals(System.Object)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Surface.GetHashCode">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Surface.IsValidGeometry">
+             <summary>
+             Indicates BoundBLF and BoundTRB are valid.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Surface.BoundTRB">
+             <summary>This point is the top, right, back point of the Surface
+             bounding box.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Surface.BoundBLF">
+             <summary>This point is the bottom, left, front point of the Surface
+             bounding box.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.NativeReference">
+             <summary>An internal class that enables some user derivable types to
+             be held only by a native (internal) reference.  API users should not
+             need to think about this class at all.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.getCPtr(DesignData.SDS2.Primitives.NativeReference)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.NativeRef">
+             
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.NativeDeref">
+             
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.NativeReference.#ctor">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.DoubleList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.DoubleList.DoubleListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleList.#ctor(DesignData.SDS2.Primitives.DoubleList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.BoolQ.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoolQ.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoolQ.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoolQ.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoolQ.#ctor(DesignData.SDS2.Primitives.BoolQ)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.BoolQ.#ctor(System.Boolean,System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Edge">
+             <summary> Edge represents the side of a Polygon.  An Edge contains
+             only the first point of the side; the second point is the point on
+             the next edge of a Polygon.  </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.getCPtr(DesignData.SDS2.Primitives.Edge)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.#ctor(DesignData.SDS2.Primitives.Point3D,System.Boolean,System.Boolean,System.UInt32,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+             <summary> Create an Edge for a Polygon. </summary>
+            
+             <param name="vertexLocation">Assigned to first vertex of an
+             Edge</param>
+            
+             <param name="vertexName">A bit
+             field containing information used by template detailing.</param>
+            
+             <param name="edgeType">Typically 1 for lengthwise edges and 0 otherwise.</param>
+             <param name="radiusNumber">The number of an edge on a curved surface.</param>
+             <param name="noShort">Indicates the edge will not be shortened by the Shorten
+             tool in Detailing.</param>
+             <param name="onRadius">Indicates edge is on a rounded surface. </param>
+             <param name="duplicate">Indicates a duplicate edge.</param>
+             <param name="fit">Indicates an edge has been created by a cut or fit operation.</param>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.VertexLocation">
+             <summary>
+             VertexLocation is the location of the first vertex of an Edge.
+             The second vertex is the vertex specified by the next Edge.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.VertexName">
+             <summary>
+             A bit field containing information used by template detailing.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.EdgeType">
+             <summary>
+             Typically 1 for lengthwise edges and 0 otherwise.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.RadiusNumber">
+             <summary>
+             Edges of a rounded surface may be numbered consecutively.  For
+             example, lengthwise edges in the K of a Wide Flange, but not
+             edges in the K on cap polygons.
+            
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.IsNoShort">
+             <summary>
+             Indicates the edge will not be shortened by the Shorten
+             tool in Detailing.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.IsOnRadius">
+             <summary>
+             Indicates edge is on a rounded surface. For example,
+             lengthwise edges in the K of a Wide Flange, but not edges in the
+             K on cap polygons. IsOnRadius edges are not drawn.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.IsDuplicate">
+             <summary>
+             Indicates a duplicate edge. IsDuplicate edges are not drawn.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Edge.IsFitted">
+             <summary>
+             Indicates an edge has been created by a cut or fit operation.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.Equals(DesignData.SDS2.Primitives.Edge,System.Double)">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Edge.Equals(System.Object)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Point2D">
+             <summary>
+             The Point2D class can represent a position in 2D space, or a vector in 2D space.
+             Some operations assume that the interpretation is a vector.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that intermediate arithmetic is done in floating point, and thus some
+             operations may have intermediate results that overflow, underflow or
+             experience cancellation error, like all floating-point arithmetic.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Point2D.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.#ctor">
+             <summary>
+             Instantiates a point with X and Y set to zero
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.#ctor(DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             Instantiates a point equal to the given point
+             </summary>
+             <param name="pt">
+             The point whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.#ctor(DesignData.SDS2.Primitives.Vector2D)">
+             <summary>
+             Instantiates a point with the X and Y values of the given vector
+             </summary>
+             <param name="vector">
+             The point whose value to copy
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.#ctor(System.Double,System.Double)">
+             <summary>
+             Instantiates a point with the given X and Y values
+             </summary>
+             <param name="x">
+             The X value for the new point
+             </param>
+             <param name="y">
+             The Y value for the new point
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.GetX">
+             <summary>
+             The X-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.GetY">
+             <summary>
+             The Y-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.op_Subtraction(DesignData.SDS2.Primitives.Point2D,DesignData.SDS2.Primitives.Point2D)">
+             <summary>
+             Return a vector which is the difference of the two given points
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.EpsilonEquals(DesignData.SDS2.Primitives.Point2D,System.Double)">
+             <summary>
+             Returns true if the squared distance between this point and the given point
+             is less than distance_squared.
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that EpsilonEquals can violate the transitivity rule of equality
+             comparison, because there are many groups of points (p, q, r) where
+             p.EpsilonEquals(q) and p.EpsilonEquals(r) but not q.EpsilonEquals(r).
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other point
+             </param>
+             <param name="distanceSquared">
+             The square of the smallest distance value that should be considered different
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.BinEquals(DesignData.SDS2.Primitives.Point2D,System.Double)">
+             <summary>
+             Returns true if this point and the given point fall within the same "bin".
+             A "bin" is a square region of space approximately binSize on a side.
+             </summary>
+            
+             <remarks>
+             <para>
+             Unlike EpsilonEquals, BinEquals maintains the transitive rule of equality,
+             but some points which are arbitrarily close together in distance are
+             unequal according got EpsilonEquals, because they fall into different bins.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other point
+             </param>
+             <param name="binSize">
+             The size of a bin.
+             </param>
+            
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.Interpolate(DesignData.SDS2.Primitives.Point2D,System.Double)">
+             <summary>
+             Performs linear interpolation between this point and the <c>other</c>
+             </summary>
+            
+             <remarks>
+             <para>
+             This is equal to <c>this + (other - this) * t</c>.
+             </para>
+            
+             <para>
+             Note that due to floating point arithmetic, <c>p.project(q, 1.0)</c>
+             may not be exactly equal to <c>q</c>.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other point
+             </param>
+             <param name="t">
+             Controls the mixing between the two points.  This function is defined
+             for all values of <c>t</c>, though strictly speaking only values in the
+             interval [0,1] are interpolations, and other values are extrapolations.
+             </param>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Point2D.X">
+             <summary>
+             The X-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Point2D.Y">
+             <summary>
+             The Y-coordinate of the point
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the X and Y values
+             will not necessarily yield the same point.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.  True for instances which
+             are Equals(), otherwise False with high probability.  Specific hash
+             values are implementation-dependent.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.Equals(System.Object)">
+            
+             <summary>
+             Checks if each element of the points are equal using Double.Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.op_Equality(DesignData.SDS2.Primitives.Point2D,DesignData.SDS2.Primitives.Point2D)">
+            
+             <summary>
+             Checks if each element of the points are equal using == on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Point2D.op_Inequality(DesignData.SDS2.Primitives.Point2D,DesignData.SDS2.Primitives.Point2D)">
+            
+             <summary>
+             Checks if any element of the points are unequal using != on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="p">
+             The point to compare
+             </param>
+             <param name="q">
+             The point to compare to
+             </param>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.DoubleQ.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleQ.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleQ.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleQ.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleQ.#ctor(DesignData.SDS2.Primitives.DoubleQ)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.DoubleQ.#ctor(System.Boolean,System.Double)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.UintQ.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.UintQ.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.UintQ.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.UintQ.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.UintQ.#ctor(DesignData.SDS2.Primitives.UintQ)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.UintQ.#ctor(System.Boolean,System.UInt32)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.IntQ.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.IntQ.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.IntQ.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.IntQ.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.IntQ.#ctor(DesignData.SDS2.Primitives.IntQ)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.IntQ.#ctor(System.Boolean,System.Int32)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.StringList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.StringList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.StringList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.StringList.StringListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.StringList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.StringList.#ctor(DesignData.SDS2.Primitives.StringList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.StringList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.EdgeList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.EdgeList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.EdgeList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.EdgeList.EdgeListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.EdgeList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.EdgeList.#ctor(DesignData.SDS2.Primitives.EdgeList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.EdgeList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Matrix">
+             <summary>
+             The Matrix class represents a transformation matrix.
+             </summary>
+            
+             <remarks>
+             <para>
+             A Matrix has 4x3 floating point elements, and many routines
+             exhibit undefined behavior if the elements of the matrix cannot
+             be composed into a combination of rotations and translations.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Primitives.Matrix.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.#ctor(DesignData.SDS2.Primitives.Matrix)">
+             <summary> Create a matrix equal to the given matrix</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.#ctor">
+             <summary>
+             Create an identity matrix.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.Inverse">
+             <summary>
+             Return the inverse of this matrix
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.op_Multiply(DesignData.SDS2.Primitives.Matrix,DesignData.SDS2.Primitives.Matrix)">
+             <summary>
+             Return a new matrix which composes the two matrices
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.op_Multiply(DesignData.SDS2.Primitives.Matrix,DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Return the point transformed by the matrix
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.op_Multiply(DesignData.SDS2.Primitives.Matrix,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Return the vector transformed by the matrix
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.Translation(DesignData.SDS2.Primitives.Point3D)">
+             <summary>
+             Create a translation matrix
+             </summary>
+            
+             <param name="origin">
+             The translation applied by the new matrix
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.Rotation(System.Double,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Create a rotation matrix
+             </summary>
+            
+             <param name="angle">
+             Counterclockwise rotation in radians
+             </param>
+            
+             <param name="axis">
+             Axis of rotation
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.XRotation(System.Double)">
+             <summary>
+             Create a rotation matrix around the X axis
+             </summary>
+            
+             <param name="angle">
+             Counterclockwise rotation in radians
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.YRotation(System.Double)">
+             <summary>
+             Create a rotation matrix around the Y axis
+             </summary>
+            
+             <param name="angle">
+             Counterclockwise rotation in radians
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.ZRotation(System.Double)">
+             <summary>
+             Create a rotation matrix around the Z axis
+             </summary>
+            
+             <param name="angle">
+             Counterclockwise rotation in radians
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.ToCoordinateSystemXY(DesignData.SDS2.Primitives.Point3D,DesignData.SDS2.Primitives.Vector3D,DesignData.SDS2.Primitives.Vector3D)">
+             <summary>
+             Create a coordinate system from X axis, Y axis, and origin location.
+             </summary>
+            
+             <remarks>
+             Note that the X and Y axes must be perpendicular unit vectors to within about 1 part in 1e-7
+             </remarks>
+            
+             <param name="origin">
+             The origin for the coordinate system
+             </param>
+            
+             <param name="xAxis">
+             The X axis for the coordinate system, a unit vector
+             </param>
+            
+             <param name="yAxis">
+             The Y axis for the coordinate system, a unit vector perpendicular to XAxis
+             </param>
+            
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             If basis vectors are not normalized or perpendicular.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.BetweenSystems(DesignData.SDS2.Primitives.Matrix,DesignData.SDS2.Primitives.Matrix)">
+             <summary>
+             Create a transformation matrix from the first coordinate system to the second coordinate system
+             </summary>
+             <param name="from">The "from" coordinate system</param>
+             <param name="to">The "to" coordinate system</param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.MirrorZ">
+             <summary>
+             Create a Matrix mirrored about the XY plane.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.GetXAxis">
+             <summary> Get the coordinate system X axis. </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.GetYAxis">
+             <summary> Get the coordinate system Y axis. </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.GetZAxis">
+             <summary> Get the coordinate system Z axis. </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.GetOrigin">
+             <summary> Get the coordinate system origin. </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.EpsilonEquals(DesignData.SDS2.Primitives.Matrix,System.Double)">
+             <summary>
+             Returns EpsilonEquals() on each sub component of the matrix
+             </summary>
+            
+             <remarks>
+             <para>
+             Note that EpsilonEquals can violate the transitivity rule of equality
+             comparison, because there are many groups of matrices (p, q, r) where
+             p.EpsilonEquals(q) and p.EpsilonEquals(r) but not q.EpsilonEquals(r).
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other matrix
+             </param>
+             <param name="distanceSquared">
+             The square of the smallest distance value that should be considered different
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.BinEquals(DesignData.SDS2.Primitives.Matrix,System.Double)">
+             <summary>
+             Returns BinEquals() on each sub component of the matrix
+             </summary>
+            
+             <remarks>
+             <para>
+             Unlike EpsilonEquals, BinEquals maintains the transitive rule of equality.
+             </para>
+             </remarks>
+            
+             <param name="other">
+             The other matrix
+             </param>
+             <param name="binSize">
+             The size of a bin.
+             </param>
+            
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Matrix.Origin">
+             <summary> Get the coordinate system origin. </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Matrix.XAxis">
+             <summary> Get the coordinate system X axis. </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Matrix.YAxis">
+             <summary> Get the coordinate system Y axis. </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Primitives.Matrix.ZAxis">
+             <summary> Get the coordinate system Z axis. </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.ToString">
+            
+             <summary>
+             Formats the point into a string.  Note that because the values are
+             rounded for display, parsing them to retrieve the X, Y, and Z values
+             will not necessarily yield the same point.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.GetHashCode">
+            
+             <summary>
+             Returns the hash code for this instance.  True for instances which
+             are Equals(), otherwise False with high probability.  Specific hash
+             values are implementation-dependent.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.Equals(System.Object)">
+            
+             <summary>
+             Checks if each element of the matrix are equal using Equals on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="obj">
+             The matrix to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.op_Equality(DesignData.SDS2.Primitives.Matrix,DesignData.SDS2.Primitives.Matrix)">
+            
+             <summary>
+             Checks if each element of the matrices are equal using == on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="a">
+             The matrix to compare
+             </param>
+             <param name="b">
+             The matrix to compare to
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Matrix.op_Inequality(DesignData.SDS2.Primitives.Matrix,DesignData.SDS2.Primitives.Matrix)">
+            
+             <summary>
+             Checks if any element of the matrices are unequal using != on each component.
+             Note that this is an "exact" comparison method, and only
+             appropriate in special circumstances.
+             </summary>
+             <param name="a">
+             The matrix to compare
+             </param>
+             <param name="b">
+             The matrix to compare to
+             </param>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Primitives.Utility">
+            <summary>
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.ToDegrees(System.Double)">
+            <summary>
+            Convert from radians to degrees.
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.ToRadians(System.Double)">
+            <summary>
+            Convert from degrees to radians.
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.EpsilonEquals(System.Double,System.Double,System.Double)">
+             <summary>
+               Test near-equality for floating point values.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.MillimetersToInches(System.Double)">
+             <summary>
+               Convert millimeters to inches.  Inches are the units stored in SDS/2 for lengths.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.InchesToMillimeters(System.Double)">
+             <summary>
+               Convert inches, SDS/2 length units, to millimeters.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.KipsToKiloNewton(System.Double)">
+             <summary>
+               Convert kips, SDS/2 force units, to kilo newtons.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.KiloNewtonsToKips(System.Double)">
+             <summary>
+               Convert kilo newtons to kips, the SDS/2 unit for force.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.KipInchToKiloNewtonMeter(System.Double)">
+             <summary>
+               Convert kip inches, the SDS/2 unit for torque, to kilo newton meters.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.KiloNewtonMeterToKipInch(System.Double)">
+             <summary>
+               Convert kilo newton meters to kip inches, the SDS/2 unit for torque.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.KilogramToPound(System.Double)">
+             <summary>
+               Convert kilograms to pounds, the SDS/2 unit for mass.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Primitives.Utility.PoundToKilogram(System.Double)">
+             <summary>
+               Convert pounds, the SDS/2 unit for mass, to kilograms.
+             </summary>
+            </member>
+    </members>
+</doc>

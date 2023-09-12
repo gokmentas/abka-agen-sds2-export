@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.Linker</name>
+    </assembly>
+    <members>
+        <member name="T:DesignData.SDS2.Linker">
+             <summary>
+               Before you do anything else with any SDS/2 assemblies,
+               call Linker.Link with appropriate version requirements.
+               This class will find the other SDS/2 .net assemblies from
+               that.  You should copy the assembly for this class and
+               distribute it with your program (DesignData.SDS2.Linker.dll).
+            
+               But that's the only SDS/2 assembly you should distribute/copy.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Linker.Link(DesignData.SDS2.MajorVersion,System.Int32)">
+             <summary>
+               Call this to find the installed SDS/2 libraries on the
+               system and use them.
+            
+               This has to be called before entering a function that used
+               any other SDS/2 assemblies.  So, if your Main method doesn't
+               you can call this there, or if it does you can simply declare
+               a static readonly bool and assign it to the result of calling
+               this.  That variable will be initialized (and so this will be called)
+               before entering Main, and before .Net will try to load any other
+               SDS/2 assemblies.
+             </summary>
+             <param name="major">
+                 The major version of SDS/2 to grab libraries for.
+             </param>
+             <param name="minor">
+                 The minimum minor version required, often this should
+                 just be zero, unless there's a known problem with your
+                 program running against an earlier minor version.
+             </param>
+             <remarks>
+               This will not allow you to link against multiple major versions with
+               the same program.  You have to choose one to use at the start.  You can
+               only call this once, any more calls will throw.
+             </remarks>
+            </member>
+        <member name="M:DesignData.SDS2.Linker.Link(System.Int32,System.Int32)">
+             <summary>
+               Call this to find the installed SDS/2 libraries on the
+               system and use them.
+             </summary>
+             <param name="major">
+                 The major version of SDS/2 to grab libraries for.
+             </param>
+             <param name="minor">
+                 The minimum minor version required, often this should
+                 just be zero, unless there's a known problem with your
+                 program running against an earlier minor version.
+             </param>
+             <remarks>
+               This will not allow you to link against multiple major versions with
+               the same program.  You have to choose one to use at the start.  You can
+               only call this once, any more calls will throw.
+             </remarks>
+            </member>
+        <member name="M:DesignData.SDS2.Linker.Link(System.String)">
+             <summary>
+              If you need to supply the full path to the SDS/2
+              installation.  This directory should contain all SDS/2
+              assemblies and sds2native.dll as well as other dlls
+              packaged with it.
+             </summary>
+             <remarks>
+              Generally you don't want this, you want a versioned variant which will find
+              this path by looking at installation artifacts in the windows registry.
+             </remarks>
+             <remarks>
+               This will not allow you to link against multiple major versions with
+               the same program.  You have to choose one to use at the start.  You can
+               only call this once, any more calls will throw.
+             </remarks>
+            </member>
+        <member name="M:DesignData.SDS2.Linker.IsValidInstallation(System.String)">
+             <summary>
+               Return true if the current installation at a given
+               path has the required binaries to run the API.
+             </summary>
+            </member>
+        <member name="T:DesignData.SDS2.LinkerException">
+             <summary>
+               Thrown when the Linker is not able to find the version
+               requested or detects a problem with using that version.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.LinkerException.#ctor(System.String)">
+             <summary>
+               Create a new LinkerException
+             </summary>
+            </member>
+        <member name="T:DesignData.SDS2.MajorVersion">
+             <summary>
+               A list of major versions with .net API support, so far.
+             </summary>
+            </member>
+        <member name="F:DesignData.SDS2.MajorVersion.TwentyTwentyOne">
+             <summary>
+               SDS2 2021
+             </summary>
+            </member>
+        <member name="F:DesignData.SDS2.MajorVersion.TwentyTwentyTwo">
+             <summary>
+               SDS2 2022
+             </summary>
+            </member>
+    </members>
+</doc>

@@ -1,0 +1,1463 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.Detail</name>
+    </assembly>
+    <members>
+        <member name="T:DesignData.SDS2.Detail.ApprovalStatus">
+             <summary>Approval statuses for drawings</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.ApprovalStatus.ReviseAndResubmit">
+             <summary>Needs to be submitted after needed revisions are made</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.ApprovalStatus.NotApproved">
+             <summary>Has not been approved, no known reason</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.ApprovalStatus.ApprovedAsNoted">
+             <summary>Has been rejected, with notes</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.ApprovalStatus.Approved">
+             <summary>This has been approved</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.ApprovalStatus.NotReviewed">
+             <summary>Has not been reviewed yet.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.Drawing">
+             <summary>Metadata for a drawing and access to a PDF rendering of the drawing</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.getCPtr(DesignData.SDS2.Detail.Drawing)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Find(DesignData.SDS2.Detail.PiecemarkType,System.String)">
+             <summary>Find all drawings referencing the given piecemark.  If a piecemark hasn't been detailed
+             yet it will not have a drawing, so this list will be empty.</summary>
+             <param name="piecemarkType">the type of mark, major or minor</param>
+             <param name="piecemark">the name of the mark, such as B_1 or p1</param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Find(DesignData.SDS2.Database.TableWithDrawings,System.String)">
+             <summary>Find a drawing, and anything referencing it, based on a database table
+             and the name of the drawing</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Get(DesignData.SDS2.Database.TableWithDrawings,System.String)">
+             <summary>Get a drawing based on a table and its name</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Get(DesignData.SDS2.Detail.PiecemarkType,System.String)">
+             <summary>Get a drawing based on piecemark type and its name</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.Get(DesignData.SDS2.Database.DrawingHandle)">
+             <summary>Get a drawing based on its location in the database</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.GetName">
+             <summary>the name of the drawing</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.GetDrawingType">
+             <summary>the type of the drawing, detail, sheet, submaterial detail, etc</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.CreatePDF">
+             <summary>Get the PDF as a binary blob.  This can be written to a file or stored elsewhere.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.GetStatus">
+             <summary>Accessor object for drawing status information</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.GetBillOfMaterial">
+             <summary>The bill of material associated with a drawing.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Drawing.GetHandle">
+             <summary>The database handle for this drawing</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.Name">
+             <summary>the name of the drawing</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.DrawingType">
+             <summary>the type of the drawing, detail, sheet, submaterial detail, etc</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.BillOfMaterial">
+             <summary>The bill of material associated with a drawing.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.Status">
+             <summary>Accessor object for drawing status information</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.Handle">
+             <summary>The database handle for this drawing</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.EvuDefaults">
+             </member>
+        <member name="P:DesignData.SDS2.Detail.Drawing.DimensioningDefaults">
+             </member>
+        <member name="T:DesignData.SDS2.Detail.Transmittal">
+             <summary>
+             Items combined together into a single package that
+             is to be sent off for approval
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.getCPtr(DesignData.SDS2.Detail.Transmittal)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.#ctor">
+             <summary>Start a new transmittal</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetRemarks">
+             <summary>Remarks included on the transmittal cover page</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetProjectName">
+             <summary>The name of the project this transmittal pertains to</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetProjectNumber">
+             <summary>The number of the project this transmittal pertains to</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetAddressOne">
+             <summary>The first address line for this transmittal</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetAddressTwo">
+             <summary>The second address line for this transmittal</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetCity">
+             <summary>The city this transmittal is being sent from</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetState">
+             <summary>The state this transmittal is being sent from</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetZipCode">
+             <summary>The zip code this transmittal is being sent from</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetTransmittalNumber">
+             <summary>The number of this transmittal</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetSent">
+             <summary>The date this transmittal will be sent</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetDue">
+             <summary>The date this transmittal is due back</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetLogo">
+             <summary>
+             A copy of the raw byte array representing the logo image. This image
+             is placed in the top right corner of the cover page. If necessary the
+             image is scaled to fit inside a 193x100 rectangle.
+             Loadable images include .jpg, .gif, .tif, and .png files.
+             </summary>
+             <example> <code>
+             Transmittal transmittal = new Transmittal();
+             transmittal.Logo = System.IO.File.ReadAllBytes("logo193x100.jpg");
+             </code> </example>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetToContact">
+             <summary>
+             Contact information for the main recipient of the transmittal.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetFromContact">
+             <summary>
+             Contact information for the sender of the transmittal.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.Add(DesignData.SDS2.Detail.TransmittalItem)">
+             <summary>Add an item to a transmittal package</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.Add(DesignData.SDS2.Detail.TransmittalCC)">
+             <summary>Add a cc for a transmittal package</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GeneratePDF">
+             <summary>Create the PDF for this transmittal and return
+             it as a byte array, to be written diretly to a .pdf file</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal._GeneratePDFs">
+             <summary>Create a series of PDFs, one per drawing, returned as a map
+             from the intended PDF filename to a byte array for the PDF.
+            
+             For the links to work, these must be written to files with the exact
+             name used as the key of this map.  Any other name will break the
+             links between drawings.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GetPDF(System.String)">
+                  
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.Remarks">
+             <summary>Remarks included on the transmittal cover page</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.ProjectName">
+             <summary>The name of the project this transmittal pertains to</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.ProjectNumber">
+             <summary>The number of the project this transmittal pertains to</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.AddressOne">
+             <summary>The first address line for this transmittal</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.AddressTwo">
+             <summary>The second address line for this transmittal</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.City">
+             <summary>The city this transmittal is being sent from</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.State">
+             <summary>The state this transmittal is being sent from</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.ZipCode">
+             <summary>The zip code this transmittal is being sent from</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.TransmittalNumber">
+             <summary>The number of this transmittal</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.Sent">
+             <summary>The date this transmittal will be sent</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.Due">
+             <summary>The date this transmittal is due back</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.To">
+             <summary>
+             Contact information for the main recipient of the transmittal.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.From">
+             <summary>
+             Contact information for the sender of the transmittal.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Transmittal.Logo">
+             <summary>
+             A copy of the raw byte array representing the logo image. This image
+             is placed in the top right corner of the cover page. If necessary the
+             image is scaled to fit inside a 193x100 rectangle.
+             Loadable images include .jpg, .gif, .tif, and .png files.
+             </summary>
+             <example> <code>
+             Transmittal transmittal = new Transmittal();
+             transmittal.Logo = System.IO.File.ReadAllBytes("logo193x100.jpg");
+             </code> </example>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Transmittal.GeneratePDFs">
+             <summary>Create a series of PDFs, one per drawing, returned as a map
+             from the intended PDF filename to a byte array for the PDF.
+            
+             For the links to work, these must be written to files with the exact
+             name used as the key of this map.  Any other name will break the
+             links between drawings.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.SheetRevision">
+             <summary>Information about a sheet revision</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.getCPtr(DesignData.SDS2.Detail.SheetRevision)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetDesignation">
+             <summary>The name of this revision</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetDescription">
+             <summary>A description of this revision</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetUser1">
+             <summary>The first user on the sheet revision line</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetUser2">
+             <summary>The second user on the sheet revision line</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetUser3">
+             <summary>The third user on the sheet revision line</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetUser4">
+             <summary>The fourth user on the sheet revision line</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.SheetRevision.GetRevisionDate">
+             <summary>The data this revision was created</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.Designation">
+             <summary>The name of this revision</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.Description">
+             <summary>A description of this revision</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.User1">
+             <summary>The first user on the sheet revision line</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.User2">
+             <summary>The second user on the sheet revision line</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.User3">
+             <summary>The third user on the sheet revision line</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.User4">
+             <summary>The fourth user on the sheet revision line</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.SheetRevision.RevisionDate">
+             <summary>The data this revision was created</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.DrawingList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.DrawingList.DrawingListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingList.#ctor(DesignData.SDS2.Detail.DrawingList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.Pdf">
+             <summary>A class representing a Pdf document</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Pdf.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Pdf.getCPtr(DesignData.SDS2.Detail.Pdf)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Pdf.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Pdf.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Pdf.GetBytes">
+             <summary>A copy of the raw byte array representing the pdf.</summary>
+             <example> <code>
+             Pdf pdf = new Pdf();
+             pdf.Bytes = System.IO.File.ReadAllBytes("document.pdf");
+             </code> </example>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.Pdf.Bytes">
+             <summary>A copy of the raw byte array representing the pdf.</summary>
+             <example> <code>
+             Pdf pdf = new Pdf();
+             pdf.Bytes = System.IO.File.ReadAllBytes("document.pdf");
+             </code> </example>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.Pdf.#ctor">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.TransmittalContact">
+             <summary>Class containing the contact information for
+             an individual/company.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.getCPtr(DesignData.SDS2.Detail.TransmittalContact)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetContact">
+             <summary>The name of individual sending/receiving the transmittal</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetEmail">
+             <summary>The email address associated with the contact</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetCompany">
+             <summary>The company the contact works for</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetAddressOne">
+             <summary>The street address of the contact/company</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetAddressTwo">
+             <summary>Additional street address for the contact/company</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetCity">
+             <summary>The city the contact/company is located in</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetState">
+             <summary>The state the contact/company is located in</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetZipCode">
+             <summary>The zip code the contact/company is located in</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.GetPhone">
+             <summary>The phone number of the contact/company</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.Company">
+             <summary>The company the contact works for</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.Contact">
+             <summary>The name of individual sending/receiving the transmittal</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.Email">
+             <summary>The email address associated with the contact</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.AddressOne">
+             <summary>The street address of the contact/company</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.AddressTwo">
+             <summary>Additional street address for the contact/company</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.City">
+             <summary>The city the contact/company is located in</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.State">
+             <summary>The state the contact/company is located in</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.ZipCode">
+             <summary>The zip code the contact/company is located in</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalContact.Phone">
+             <summary>The phone number of the contact/company</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalContact.#ctor">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.BillOfMaterialLine">
+             <summary>One line of a bill of material</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.getCPtr(DesignData.SDS2.Detail.BillOfMaterialLine)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetDescription">
+             <summary>
+             A description of the member or material. For a member, the
+             description is the member type. For a submaterial, the description
+             is the section size.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetRevision">
+             <summary>Revision</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetLineNumber">
+             <summary>Line number</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetTotalQuantity">
+             <summary>
+             The count of submaterials required to fabricate the total number of
+             shipping pieces (members).
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetUnitQuantity">
+             <summary>
+             The count of pieces of a particular submaterial that are required
+             to fabricate one of the shipping pieces (members)
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetTotalWeight">
+             <summary>
+             For a member, this is the total combined weight of the submaterials
+             required to fabricate all shipping members that receive the same
+             major mark. For a submaterial, this is the weight of all pieces of
+             that submaterial.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetUnitWeight">
+             <summary>
+             For a member, this is the total combined weight of the submaterial
+             pieces required to fabricate one shipping member. For a submaterial,
+             this is the weight of one piece of submaterial.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetRemarks">
+             <summary>
+             User-entered comments and/or information automatically compiled from
+             fields that are set to 'Merge'.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetPiecemark">
+             <summary>
+             The member piecemark of the shipping piece.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetMinorMark">
+             <summary>
+             The submaterial piecemark (material mark) of a material.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetGrade">
+             <summary>
+             The steel grade of the material.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetRoute1">
+             <summary>
+             May be a definition from routing configuration #1 that was applied
+             to a member or material, or it may be that a user has manually
+             typed in infomation to the "Mult. Cutting #" column in the bill editor.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetRoute2">
+             <summary>
+             May be a definition from routing configuration #2 that was applied
+             to a member or material. Or it may be that a user has manually
+             typed in information to the "Labor Code" column in the bill editor.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetRoute3">
+             <summary>
+             May be a definition from routing configuration #3 that was applied
+             to a member or material. Or it may be that a user has manually
+             typed in information to the "Job Cost Code" column in the bill editor.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetAdvanceMill">
+             <summary>
+             The ABM page-line number (page-line) that is assigned to the piece of
+             material listed on this line in the physical bill of material.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetLength">
+             <summary>
+             The length of the material along its X material axis.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialLine.GetIsLineHidden">
+             <summary>
+             Determines if the line is hidden in the bill of material.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Description">
+             <summary>
+             A description of the member or material. For a member, the
+             description is the member type. For a submaterial, the description
+             is the section size.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Revision">
+             <summary>Revision</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.LineNumber">
+             <summary>Line number</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.TotalQuantity">
+             <summary>
+             The count of submaterials required to fabricate the total number of
+             shipping pieces (members).
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.UnitQuantity">
+             <summary>
+             The count of pieces of a particular submaterial that are required
+             to fabricate one of the shipping pieces (members)
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.TotalWeight">
+             <summary>
+             For a member, this is the total combined weight of the submaterials
+             required to fabricate all shipping members that receive the same
+             major mark. For a submaterial, this is the weight of all pieces of
+             that submaterial.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.UnitWeight">
+             <summary>
+             For a member, this is the total combined weight of the submaterial
+             pieces required to fabricate one shipping member. For a submaterial,
+             this is the weight of one piece of submaterial.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Remarks">
+             <summary>
+             User-entered comments and/or information automatically compiled from
+             fields that are set to 'Merge'.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Piecemark">
+             <summary>
+             The member piecemark of the shipping piece.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.MinorMark">
+             <summary>
+             The submaterial piecemark (material mark) of a material.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Grade">
+             <summary>
+             The steel grade of the material.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Route1">
+             <summary>
+             May be a definition from routing configuration #1 that was applied
+             to a member or material, or it may be that a user has manually
+             typed in infomation to the "Mult. Cutting #" column in the bill editor.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Route2">
+             <summary>
+             May be a definition from routing configuration #2 that was applied
+             to a member or material. Or it may be that a user has manually
+             typed in information to the "Labor Code" column in the bill editor.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Route3">
+             <summary>
+             May be a definition from routing configuration #3 that was applied
+             to a member or material. Or it may be that a user has manually
+             typed in information to the "Job Cost Code" column in the bill editor.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.AdvanceMill">
+             <summary>
+             The ABM page-line number (page-line) that is assigned to the piece of
+             material listed on this line in the physical bill of material.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.Length">
+             <summary>
+             The length of the material along its X material axis.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialLine.IsLineHidden">
+             <summary>
+             Determines if the line is hidden in the bill of material.
+             </summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.CNC_Configuration">
+             <summary>CNC configuration information</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.getCPtr(DesignData.SDS2.Detail.CNC_Configuration)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.GetName">
+             <summary>Return the name of the first CNC_Configuration in the list.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.GetNames">
+             <summary>Return the name(s) of the CNC_Configuration(s).</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.Find(System.String)">
+             <summary>Return the configuration with the specified name.</summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             InvalidValueException will be thrown if the name does not match any configuration.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.Find(DesignData.SDS2.Primitives.StringList)">
+             <summary>Return the configuration(s) with the specified name(s).</summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             InvalidValueException will be thrown if the name does not match any configuration.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.Add(DesignData.SDS2.Primitives.StringList)">
+             <summary>Add new CNC Configurations</summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             InvalidValueException will be thrown if the name does not match any configuration.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.Remove(DesignData.SDS2.Primitives.StringList)">
+             <summary>Remove CNC Configurations</summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             InvalidValueException will be thrown if the name does not match any configuration.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.DownloadMaterials(DesignData.SDS2.Primitives.StringList,System.String)">
+             <summary>Generate CNC files for the specified submaterial marks and
+             save them to the specified destination path.
+            
+             The destination path should be a directory, if it does not exist
+             we will attempt to create it.  The parent of the directory must
+             already exist.
+             </summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             InvalidValueException will be thrown the configuration is not active.
+             </exception>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidOperationException">
+             InvalidOperationException will be thrown if CNC is unlicensed or not
+             permitted in the station.
+            
+             Or if the output path already exists as a file (not a directory), or
+             if the directory doesn't exist and we can't create it.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.DownloadMembers(DesignData.SDS2.Primitives.StringList,System.String)">
+             <summary>Generate CNC files for the specified member marks and
+             save them to the specified destination path.
+            
+             The destination path should be a directory, if it does not exist
+             we will attempt to create it.  The parent of the directory must
+             already exist.
+             </summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidValueException">
+             InvalidValueException will be thrown the configuration is not active.
+             </exception>
+             <exception cref="T:DesignData.SDS2.Exceptions.InvalidOperationException">
+             InvalidOperationException will be thrown if CNC is unlicensed or not
+             permitted in the station.
+            
+             Or if the output path already exists as a file (not a directory), or
+             if the directory doesn't exist and we can't create it.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_Configuration.GetConfigurations">
+             <summary>Return all the configurations defined in the job.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.CNC_Configuration.Name">
+             <summary>Return the name of the first CNC_Configuration in the list.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.CNC_Configuration.Names">
+             <summary>Return the name(s) of the CNC_Configuration(s).</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.BillSequenceList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillSequenceList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillSequenceList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.BillSequenceList.BillSequenceListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillSequenceList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillSequenceList.#ctor(DesignData.SDS2.Detail.BillSequenceList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillSequenceList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.BillOfMaterial">
+             <summary>The bill of materials for a drawing</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterial.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterial.getCPtr(DesignData.SDS2.Detail.BillOfMaterial)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterial.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterial.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterial.GetLines">
+             <summary>All the lines of bill of material.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterial.GetSequences">
+             <summary>Bill of material sequences.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.TransmittalItem">
+             <summary>A line on the cover sheet of a transmittal</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.getCPtr(DesignData.SDS2.Detail.TransmittalItem)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.GetDescription">
+             <summary>The description field of the line</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.GetRevision">
+             <summary>The revision field of the line</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.GetCopies">
+             <summary>The number of copies</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.Add(DesignData.SDS2.Database.DrawingHandle)">
+             <summary>Add a single drawing to a transmittal</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.Add(DesignData.SDS2.Detail.Pdf)">
+             <summary>Add a pdf to a transmittal</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalItem.Description">
+             <summary>The description field of the line</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalItem.Revision">
+             <summary>The revision field of the line</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalItem.Copies">
+             <summary>The number of copies</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalItem.#ctor">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.BillOfMaterialSequence">
+             <summary>Bill of material sequence</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.getCPtr(DesignData.SDS2.Detail.BillOfMaterialSequence)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.GetName">
+             <summary>Sequence name.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.GetQuantity">
+             <summary>Sequence quantity.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillOfMaterialSequence.GetAdvanceMill">
+             <summary>Advance mill page line.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialSequence.Name">
+             <summary>Sequence name.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialSequence.Quantity">
+             <summary>Sequence quantity.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.BillOfMaterialSequence.AdvanceMill">
+             <summary>Advance mill page line.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.TransmittalCC">
+             <summary>A carbon copy recipient for a transmittal</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.getCPtr(DesignData.SDS2.Detail.TransmittalCC)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.GetCompany">
+             <summary>The company of the recipient</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.GetContact">
+             <summary>The contact name of the recipient</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.GetEmail">
+             <summary>The email of the recipient</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.GetCopies">
+             <summary>The number of the copies for the recipient</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalCC.Company">
+             <summary>The company of the recipient</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalCC.Contact">
+             <summary>The contact name of the recipient</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalCC.Email">
+             <summary>The email of the recipient</summary> 
+            </member>
+        <member name="P:DesignData.SDS2.Detail.TransmittalCC.Copies">
+             <summary>The number of the copies for the recipient</summary> 
+            </member>
+        <member name="M:DesignData.SDS2.Detail.TransmittalCC.#ctor">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.CNC_ConfigurationList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_ConfigurationList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_ConfigurationList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.CNC_ConfigurationList.CNC_ConfigurationListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_ConfigurationList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_ConfigurationList.#ctor(DesignData.SDS2.Detail.CNC_ConfigurationList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.CNC_ConfigurationList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.Detail">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.PiecemarkType">
+             <summary>Enumeration of types of piecemarks in SDS2</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.PiecemarkType.Major">
+             <summary>A member, assembly, or major, piecemark</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.PiecemarkType.Minor">
+             <summary>A material, or minor, piecemark</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Detail.BillLineList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillLineList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillLineList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.BillLineList.BillLineListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillLineList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillLineList.#ctor(DesignData.SDS2.Detail.BillLineList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.BillLineList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.DrawingStatus">
+             <summary>Status information about a drawing.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.getCPtr(DesignData.SDS2.Detail.DrawingStatus)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetSheetRevision">
+             <summary>Sheet revision information for this drawing, if any.  If
+             no information exists this will be null.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetApprovalStatus">
+             <summary>The approval status for this drawing</summary>
+             <value>
+             The approval status for this drawing.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetLastPlottedDate">
+             <summary>The last date this drawing was plotted.</summary>
+             <value>
+             The last plotted date of the drawing.  Returns null if it hasn't been set.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetDetailCompleteDate">
+             <summary>The date this was set to detail complete.</summary>
+             <value>
+             The detail complete date of the drawing.  Returns null if it hasn't been set.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetSentForApprovalDate">
+             <summary>The date this was sent for approval.</summary>
+             <value>
+             The sent for approval date of the drawing.  Returns null if it hasn't been sent.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetReceivedForApprovalDate">
+             <summary>The date this was received for approval.</summary>
+             <value>
+             The received for approval date of the drawing.  Returns null if it hasn't been received.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetInShopDate">
+             <summary>The date this drawing went to the shop.</summary>
+             <value>
+             The date the drawing went to the shop.  Returns null if it hasn't been sent to the shop.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetFabricatedDate">
+             <summary>The date this drawing went for fabrication.</summary>
+             <value>
+             The fabrication date of the drawing.  Returns null if it hasn't gone to fabrication.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetActualShipDate">
+             <summary>The date this was actually shipped out.</summary>
+             <value>
+             The shipped date.  Returns null if it hasn't been shipped.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetErectedDate">
+             <summary>Gets the date this was erected on site.</summary>
+             <value>
+             The erected date of the drawing.  Returns null if it hasn't been set.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetDetailFrozenDate">
+             <summary>The date this was frozen, or null if the drawing is not frozen</summary>
+             <value>
+             The frozen date for this drawing, if a layer outline exists.
+             </value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetDrawingScale">
+             <summary>The scale of the drawing.</summary>
+             <value>The drawing scale, if the drawing exists.</value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetIsDetailFromDrawingScale">
+             <summary>Determines if the scale at which a member is detailed is regenerated
+                      next time detailing is run on the member. This applies only to member
+                      details.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetDescription">
+             <summary>The drawing description.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetFileDescription">
+             <summary>A user-defined description of the drawing.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetQuantity">
+             <summary>The count of member or pieces of submaterial with
+                      this drawing's piecemark.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetLength">
+             <summary>The length dimension of the drawing.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetHeight">
+             <summary>The height dimension of the drawing.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetMaterial">
+             <summary>The section size of the member or submaterial.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetMemberType">
+             <summary>The type of the member(Beam, Column, etc.).</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetMaterialLength">
+             <summary>The length of the material.</summary>
+             <value>The length of the material, measured as the
+                    farthest point on its left end to the farthest point
+                    on the right end, as measured parallel with the
+                    workline of the material. Applies to member details
+                    and submaterial details.  On member details, this is
+                    the total length of the member main material.</value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetDetailRotation">
+             <summary>The degrees of rotation of the member on the drawing.</summary>
+             <value>Angle of rotation in radians.  Range is [-pi/2, pi/2].</value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetSheet">
+             <summary>List of sheets the drawing appears on.</summary>
+             <value>A comma-separated list of sheets the drawing appears on.</value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetVersion">
+             <summary>
+                 The version of SDS2 that the drawing was created with.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetMemberNumber">
+             <summary>The lowest member number of all members with the same piecemark as
+                      the drawing.</summary>
+             <value>If 0, then the drawing is not a member detail.  If it is not 0,
+                    then the drawing is a member detail, and the number is the lowest
+                    member number of all members that have been assigned the same piecemark.</value>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetMarkedForExport">
+             <summary>Returns whether or not the member detail will be listed in a
+                      FabTrol export by "BOM" or "Model".</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DrawingStatus.GetOverrideDrawingEditorModelConsistencyLocks">
+             <summary>Returns whether or not restrictions from Dimension Settings
+                      that apply to submaterials and details are temporarily
+                      overwritten.</summary>
+             <value>If true, restrictions are temporarily overwritten.</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.SheetRevision">
+             <summary>Sheet revision information for this drawing, if any.  If
+             no information exists this will be null.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.ApprovalStatus">
+             <summary>The approval status for this drawing</summary>
+             <value>
+             The approval status for this drawing.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.LastPlottedDate">
+             <summary>The last date this drawing was plotted.</summary>
+             <value>
+             The last plotted date of the drawing.  Returns null if it hasn't been set.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.DetailCompleteDate">
+             <summary>The date this was set to detail complete.</summary>
+             <value>
+             The detail complete date of the drawing.  Returns null if it hasn't been set.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.SentForApprovalDate">
+             <summary>The date this was sent for approval.</summary>
+             <value>
+             The sent for approval date of the drawing.  Returns null if it hasn't been sent.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.ReceivedForApprovalDate">
+             <summary>The date this was received for approval.</summary>
+             <value>
+             The received for approval date of the drawing.  Returns null if it hasn't been received.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.InShopDate">
+             <summary>The date this drawing went to the shop.</summary>
+             <value>
+             The date the drawing went to the shop.  Returns null if it hasn't been sent to the shop.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.FabricatedDate">
+             <summary>The date this drawing went for fabrication.</summary>
+             <value>
+             The fabrication date of the drawing.  Returns null if it hasn't gone to fabrication.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.ActualShipDate">
+             <summary>The date this was actually shipped out.</summary>
+             <value>
+             The shipped date.  Returns null if it hasn't been shipped.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.ErectedDate">
+             <summary>Gets the date this was erected on site.</summary>
+             <value>
+             The erected date of the drawing.  Returns null if it hasn't been set.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.DetailFrozenDate">
+             <summary>The date this was frozen, or null if the drawing is not frozen</summary>
+             <value>
+             The frozen date for this drawing, if a layer outline exists.
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.DrawingScale">
+             <summary>The scale of the drawing.</summary>
+             <value>The drawing scale, if the drawing exists.</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.IsDetailFromDrawingScale">
+             <summary>Determines if the scale at which a member is detailed is regenerated
+                      next time detailing is run on the member. This applies only to member
+                      details.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Description">
+             <summary>The drawing description.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Quantity">
+             <summary>The count of member or pieces of submaterial with
+                      this drawing's piecemark.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Length">
+             <summary>The length dimension of the drawing.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Height">
+             <summary>The height dimension of the drawing.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Material">
+             <summary>The section size of the member or submaterial.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.MemberType">
+             <summary>The type of the member(Beam, Column, etc.).</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.MaterialLength">
+             <summary>The length of the material.</summary>
+             <value>The length of the material, measured as the
+                    farthest point on its left end to the farthest point
+                    on the right end, as measured parallel with the
+                    workline of the material. Applies to member details
+                    and submaterial details.  On member details, this is
+                    the total length of the member main material.</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.DetailRotation">
+             <summary>The degrees of rotation of the member on the drawing.</summary>
+             <value>Angle of rotation in radians.  Range is [-pi/2, pi/2].</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Sheet">
+             <summary>List of sheets the drawing appears on.</summary>
+             <value>A comma-separated list of sheets the drawing appears on.</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.Version">
+             <summary>
+                 The version of SDS2 that the drawing was created with.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.MemberNumber">
+             <summary>The lowest member number of all members with the same piecemark as
+                      the drawing.</summary>
+             <value>If 0, then the drawing is not a member detail.  If it is not 0,
+                    then the drawing is a member detail, and the number is the lowest
+                    member number of all members that have been assigned the same piecemark.</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.IsMarkedForExport">
+             <summary>Returns whether or not the member detail will be listed in a
+                      FabTrol export by "BOM" or "Model".</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Detail.DrawingStatus.OverrideDrawingEditorModelConsistencyLocks">
+             <summary>Returns whether or not restrictions from Dimension Settings
+                      that apply to submaterials and details are temporarily
+                      overwritten.</summary>
+             <value>If true, restrictions are temporarily overwritten.</value>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Detail.DatabaseExtensionMethods">
+             <summary>
+                 Extension methods for DesignData.SDS2.Database.  These are all
+                 convenience methods and will appear to be on classes in DesignData.SDS2.Database.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Detail.DatabaseExtensionMethods.Add(DesignData.SDS2.Database.Transaction,DesignData.SDS2.Detail.Drawing)">
+             <summary>
+                 Add a drawing to the transaction so that it can be modified.
+                 You will need to Lock() again after adding drawings.
+             </summary>
+             <remarks>
+                 This is the same as transaction.Add(drawing.Handle);
+             </remarks>
+            </member>
+    </members>
+</doc>

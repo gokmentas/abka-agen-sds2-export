@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:DesignData.SDS2.WinForms.InteractiveLockHandler">
+             <summary>
+               Pass one of these to Transaction.Lock to get a GUI lock screen
+               when locks aren't immediately available.  Users will be able
+               to abort waiting for locks which will cause your Lock() call
+               to return false.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.WinForms.InteractiveLockHandler.#ctor">
+             <summary>
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.WinForms.InteractiveLockHandler.LockSucceeded(DesignData.SDS2.Database.TableIndexHandle)">
+             <summary>
+             </summary>
+             <param name="databaseItem" />
+            </member>
+        <member name="M:DesignData.SDS2.WinForms.InteractiveLockHandler.LockFailed(DesignData.SDS2.Database.TableIndexHandle,System.String)">
+             <summary />
+             <param name="databaseItem" />
+             <param name="userMessage" />
+            </member>
+        <member name="M:DesignData.SDS2.WinForms.InteractiveLockHandler.EventLoop">
+             <summary>
+             </summary>
+            </member>
+        <member name="T:DesignData.SDS2.WinForms.LicensingInitialization">
+             <summary>
+               Helper functions for licensing, which sometimes has to be
+               interactive since the user must login to their 10duke account
+               if no credentials are on file.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.WinForms.LicensingInitialization.Checkout">
+             <summary>
+               If there are stored credentials, checkout a license right away.
+               If not, prompt the user (with a winforms dialog) for credentials
+               and then ckeckout a license.  Those credentials will be stored
+               for the next use.
+            
+               This helper, or equivalent code, must be called before doing anything
+               else with the SDS2 API.
+            
+               Equivalent code:
+               <code>
+               if(!Licensing.HasStoredCredentials)
+               {
+                   Licensing.SetCredentials("a 10duke username", "their password");
+               }
+               Licensing.Checkout();
+               </code>
+             </summary>
+            </member>
+    </members>
+</doc>

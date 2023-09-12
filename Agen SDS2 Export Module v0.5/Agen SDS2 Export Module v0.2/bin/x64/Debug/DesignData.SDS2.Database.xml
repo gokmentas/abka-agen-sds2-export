@@ -1,0 +1,1932 @@
+<?xml version='1.0' encoding='utf-8'?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.Database</name>
+    </assembly>
+    <members>
+        <member name="F:DesignData.SDS2.Database.GridLineHandleList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandleList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandleList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.GridLineHandleList.GridLineHandleListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandleList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandleList.#ctor(DesignData.SDS2.Database.GridLineHandleList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandleList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.ReadOnlyTransaction">
+             <summary>
+             This is effectively a read-only transaction object.  Use it to
+             get the most up to date data for each member.
+            
+             Construct the object with the active job.
+             </summary>
+             <remarks>
+             This object should be disposed when it's no longer in use, use this with a
+             using statement.
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.getCPtr(DesignData.SDS2.Database.ReadOnlyTransaction)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.Dispose">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.#ctor(DesignData.SDS2.Database.Job,System.Boolean)">
+             <param name="activeJob">If it is not already opened, this job will be opened and made the active job.</param>
+             <param name="manualRefresh">When set to true, you will need to make your own calls to RefreshTable.</param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ReadOnlyTransaction.RefreshTable(DesignData.SDS2.Database.Table)">
+             <summary>
+             Call this before accessing members (using Get or GetBrief).  This will read all of the "fixed"
+             data for all members, and ensure that we know whether members have been deleted or not.
+            
+             Any data read here is subject to change as long as items (such as members) are not locked.
+             </summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.LicenseFeatures">
+             <summary>Enumeration denoting different license features for the SDS2 .Net API.</summary>
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseFeatures.API">
+            
+             <summary>Basic access to the .Net API.</summary>
+             <remarks>
+                 Calling Licensing.HasFeature(LicenseFeatures.API) is equivalent to
+                 checking the Licensing.IsLicensed property.
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseFeatures.Detailing">
+             <summary>Allows programmers to create new drawings via the API.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseFeatures.Processing">
+             <summary>Allows programmers to process members with Transaction.Commit(processMembers:true).</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseFeatures.ModelLink">
+             <summary>Allows for exporting data from the model in various formats.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseFeatures.Toolbox">
+             <summary>Allows access to python "toolbox" plugins.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Transaction">
+             <remarks>
+             A Transaction must be used in a using statement so that it will be
+             properly disposed at the end of that block of code.  Otherwise, the
+             locks held by the Transaction may be held until the Transaction is
+             garbage-collected.
+            
+             Transaction objects may be reused after a commit.  Handles that have
+             been added to a Transaction are kept through the commit.  Handles
+             cannot be removed from a Transaction.
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.getCPtr(DesignData.SDS2.Database.Transaction)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.#ctor(DesignData.SDS2.Database.Job,DesignData.SDS2.Database.LockHandler,System.Boolean)">
+             <param name="activeJob">If it is not already opened, this job will be opened and made the active job.</param>
+             <param name="lockHandler">See documentation for this interface, callbacks will be called on this as we go through the locking process</param>
+             <param name="manualRefresh">When set to true, you will need to make your own calls to RefreshTable.</param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.GridLineHandle)">
+             <summary>
+             Add a grid line to the transaction before locking so that it can be modified.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.NoteHandle)">
+             <summary>
+             Add a note to the transaction before locking so that it can be modified.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.GroupMemberHandle)">
+             <summary>
+             Add a group member to the transaction before locking so that it can be modified.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.MemberHandle)">
+             <summary>
+             Add a member to the transaction before locking so that it can be modified.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.MaterialHandle)">
+             <summary>
+             Add a material to the transaction so that it can be modified.
+             You will need to Lock() again after adding materials.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.WeldHandle)">
+             <summary>
+             Add a weld to the transaction so that it can be modified.
+             You will need to Lock() again after adding welds.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.HoleHandle)">
+             <summary>
+             Add a hole to the transaction so that it can be modified.
+             You will need to Lock() again after adding holes.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.BoltHandle)">
+             <summary>
+             Add a bolt to the transaction so that it can be modified.
+             You will need to Lock() again after adding bolts.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.ComponentHandle)">
+             <summary>
+             Add a component to the transaction so that it can be modified.
+             You will need to Lock() again after adding components.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.CustomPropertyMapHandle)">
+             <summary>
+             Add a custom property map to the transaction so that it can be modified.
+             You will need to Lock() again after adding maps.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.MaterialFileHandle)">
+             <summary>
+             Add a material file to the transaction so that it can be modified.
+             You will need to Lock() again after adding a material file.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.JobSetupHandle)">
+             <summary>
+             Add job setup to the transaction so that it can be modified.
+             You will need to Lock() again after adding job setup.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.DrawingHandle)">
+             <summary>
+             Add a drawing to the transaction so that it can be modified.
+             You will need to Lock() again after adding drawings.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Add(DesignData.SDS2.Database.FabricatorHandle)">
+             <summary>
+             Add fabricator to the transaction so that it can be modified.
+             You will need to Lock() again after adding fabricator.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Lock">
+             <summary>
+             Lock everything which has been added to this transaction.  Once it's
+             been locked you can safely use Get and GetBrief and then modify data before committing.
+             </summary>
+             <returns>false if we couldn't get all locks, otherwise true is returned</returns>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.Commit(System.Boolean)">
+             <summary>
+             Commit changes made inside this transaction.
+             </summary>
+             <returns>
+             A TransactionFailure object, which is implicitly castable to a boolean to
+             indicate if the commit succeeded (true).  Or to a string for the user
+             presentable reason it failed (or the empty string if it passed).  Or to
+             a TransactionFailureCode to indicate why it failed.
+            
+             So you can write:
+             <pre>
+             if(transaction.Commit())
+             {
+                //only happens if the commit passes!
+             }
+             Or:
+             var failure = transaction.Commit();
+             if(failure.TransactionFailed)
+             {
+                 //only happens if the commit fails!
+                 Console.WriteLine(failure.Reason);
+             }
+             </pre>
+             </returns>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Transaction.#ctor(DesignData.SDS2.Database.Job,DesignData.SDS2.Database.ILockHandler,System.Boolean)">
+             <param name="activeJob">If it is not already opened, this job will be opened and made the active job.</param>
+             <param name="lockHandler">See documentation for this interface, callbacks will be called on this as we go through the locking process</param>
+             <param name="manualRefresh">When set to true, you will need to make your own calls to RefreshTable.</param>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.BoltHandle">
+             <summary>A handle specifically for bolts</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.getCPtr(DesignData.SDS2.Database.BoltHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.#ctor(DesignData.SDS2.Database.MemberHandle,System.Nullable{System.Guid})">
+             <summary>Create a bolt handle on a member, with the member handle
+             and a guid to find the bolt.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.GetGuid">
+             <summary>The uuid or guid representing this bolt</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.GetMember">
+             <summary>The member this bolt is on</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.BoltHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.BoltHandle.Guid">
+             <summary>The uuid or guid representing this bolt</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.BoltHandle.Member">
+             <summary>The member this bolt is on</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Job">
+             <summary>
+             An SDS2 job, or project.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.getCPtr(DesignData.SDS2.Database.Job)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetDefault">
+             <summary>The identifier for the currently selected job for the
+             user running your software.  This is the job they would see by
+             just opening SDS2.</summary>
+             <remarks>You need to have opened a DataDirectory before calling
+             this.</remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.FindJob(DesignData.SDS2.Database.Identifier)">
+             <summary>
+             Find a job on the system based on a job identifier.
+             </summary>
+             <param name="id">
+             The job identifier used to find a job on the system.  This includes
+             the name of the job and the repository this job should be found in.
+             </param>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.Open">
+             <summary>
+             Open this job and make it the current Job.  This is
+             required before you can begin accessing data inside this job.
+             SDS2 can only have one job open at a time, so calling this on
+             one job necessarily closed any already opened job.  There is no
+             need to explicitly close the job later.
+             </summary>
+             <returns>
+             true if the job has been successfully opened and is ready for access,
+             or false if something went wrong and the job is not ready for access.
+             </returns>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetMemberHandles">
+             <summary>
+             Get a list of all members in the job.
+             </summary>
+             <remarks>
+             This can be slow in large jobs, especially if it's called
+             repeatedly.
+             </remarks>
+             <returns>
+             A list of member objects representing every active member in the job.
+             </returns>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetDrawingHandles(DesignData.SDS2.Database.TableWithDrawings)">
+             <summary>Get all drawing handles for a particular table</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetGroupMemberHandles">
+             <summary>
+             Get a list of all group members in the job.
+             </summary>
+             <returns>
+             A list of group member handles representing every active group member in the job.
+             </returns>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GroupsForMember(DesignData.SDS2.Database.MemberHandle)">
+             <summary>All the GroupMemberHandles where a member is a submember</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetGridLineHandles">
+             <summary>
+             Get a list of all grid lines in the job.
+             </summary>
+             <returns>
+             A list of grid line handles representing every active grid line in the job.
+             </returns>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetNoteHandles">
+             <summary>
+             Get a list of all note handles in the job.
+             </summary>
+             <returns>
+             A list of note handles representing every active note in the job.
+             </returns>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Job.GetCustomPropertyMapHandle">
+             <summary>
+             A handle to the custom properties for this job.
+             </summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Job.Members">
+             <summary>
+             Get a list of all members in the job.
+             </summary>
+             <remarks>
+             This can be slow in large jobs, especially if it's called
+             repeatedly.
+             </remarks>
+             <returns>
+             A list of member objects representing every active member in the job.
+             </returns>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Job.CustomPropertyMapHandle">
+             <summary>
+             A handle to the custom properties for this job.
+             </summary>
+             <exception cref="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+             If Open() hasn't been called on this job, or if that call returned false,
+             or if another job has been Opened since this one was.
+             </exception>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Job.Default">
+             <summary>The identifier for the currently selected job for the
+             user running your software.  This is the job they would see by
+             just opening SDS2.</summary>
+             <remarks>You need to have opened a DataDirectory before calling
+             this.</remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Guid.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Guid.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Guid.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Guid.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Guid.#ctor(System.String)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Guid.#ctor(DesignData.SDS2.Database.Guid)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.HoleHandle">
+             <summary>A handle specifically for holes</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.getCPtr(DesignData.SDS2.Database.HoleHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.#ctor(DesignData.SDS2.Database.MaterialHandle,System.Int32)">
+             <summary>Create a hole handle from a material handle and the
+             index of the hole.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.GetMaterial">
+             <summary>The material this hole is drilling</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.GetHoleIndex">
+             <summary>The index of this hole on that material.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.HoleHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.HoleHandle.Material">
+             <summary>The material this hole is drilling</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.HoleHandle.HoleIndex">
+             <summary>The index of this hole on that material.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.TransactionFailure">
+             <summary>A commit, authentication, or locking failure from
+             a Transaction</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailure.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.HasFailure">
+             <summary>True if the operation failed, if this is the
+             case you can check Code and Reason to see why</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.GetCode">
+             <summary>The type or cause of failure</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.GetReason">
+             <summary>A string description of this failure, localized and
+             ready to be presented to the user.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.TransactionFailure.Code">
+             <summary>The type or cause of failure</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.TransactionFailure.Reason">
+             <summary>A string description of this failure, localized and
+             ready to be presented to the user.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.TransactionFailure.TransactionFailed">
+             <summary>True if the operation failed, if this is the
+             case you can check Code and Reason to see why</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.op_Implicit(DesignData.SDS2.Database.TransactionFailure)~System.Boolean">
+             <summary>Implicit conversion to success/failure bool.  True meaning
+             the transaction passed, false meaning it failed.  So the opposite of
+             TransactionFailed.</summary>
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.op_Implicit(DesignData.SDS2.Database.TransactionFailure)~DesignData.SDS2.Database.TransactionFailureCode">
+             <summary>Implicit conversion to success/failure code</summary>
+            </member>
+        <member name="M:DesignData.SDS2.Database.TransactionFailure.op_Implicit(DesignData.SDS2.Database.TransactionFailure)~System.String">
+             <summary>Implicit conversion to user visible string</summary>
+            </member>
+        <member name="T:DesignData.SDS2.Database.CustomPropertyMapHandle">
+             <summary>
+             A handle to a custom property map in the SDS2 database
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.CustomPropertyMapHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.CustomPropertyMapHandle.getCPtr(DesignData.SDS2.Database.CustomPropertyMapHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.CustomPropertyMapHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.CustomPropertyMapHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.CustomPropertyMapHandle.#ctor(DesignData.SDS2.Database.CustomPropertyMapHandle)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.MemberHandle">
+             <summary>
+             A handle specifically for members in the SDS2 database
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandle.getCPtr(DesignData.SDS2.Database.MemberHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandle.#ctor(System.Int32)">
+             <remarks>
+             Member numbers are more stable than other indexes in the SDS2 database, but it's still
+             generally better to use a GUID to look these up rather than storing member numbers.
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandle.GetCustomPropertyMapHandle">
+             <summary>
+             A handle to the custom properties for this member.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.MemberHandle.CustomPropertyHandle">
+             <summary>
+             A handle to the custom properties for this member.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.MemberHandle.CustomPropertyMapHandle">
+             <summary>
+             A handle to the custom properties for this member.
+             </summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.TableIndexHandle">
+             <summary>
+             A handle for an element in the SDS2 database.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.getCPtr(DesignData.SDS2.Database.TableIndexHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.#ctor(DesignData.SDS2.Database.Table,System.Int32)">
+             <param name="table">See the Table enumeration for possible values.</param>
+             <param name="indexInTable">The index into that table.</param>
+             <remarks>It's recommended that you avoid constructing handles in this manner.  If you need a long lasting identifier for an element in the SDS2 database you should find a GUID on that item and search for it to look it back up.</remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.GetTable">
+             <summary>
+             The table enumeration value for this handle.  Ex: Member
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.GetIndex">
+             <summary>
+             The index into the table for this item.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.TableIndexHandle.ToString">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.TableIndexHandle.Table">
+             <summary>
+             The table enumeration value for this handle.  Ex: Member
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.TableIndexHandle.Index">
+             <summary>
+             The index into the table for this item.
+             </summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.ComponentHandle">
+             <summary>A handle for a member component</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.getCPtr(DesignData.SDS2.Database.ComponentHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.GetMemberHandle">
+             <summary>The handle for the member that this component is attached to.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.GetGuid">
+             <summary>A globally unique identifier for this component</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.ComponentHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.ILockHandler">
+             <summary>
+             This interface defines the callbacks that must be provided for locking
+             feedback.  Either informing a user, or making decisions without user intervention,
+             about how to handle situations where a desired piece cannot be locked.
+            
+             The only choices are to wait for a lock or give up, if any locks couldn't be made.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ILockHandler.LockSucceeded(DesignData.SDS2.Database.TableIndexHandle)">
+             <summary>
+             This is called whenever we're able to lock an item.  This will be called at most once
+             per item.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ILockHandler.LockFailed(DesignData.SDS2.Database.TableIndexHandle,System.String)">
+             <summary>
+             This is called whenever we try to lock an item and can't get the lock.  This may
+             be called over and over and over.
+             </summary>
+             <param name="databaseItem">The item we could not lock</param>
+             <param name="userMessage">A helpful message you can display to the user to explain why it can't be locked.</param>
+             <remarks>
+             At this point it's too late to decide you don't need a modification if you can't
+             get a lock.  Either the whole transaction has to be aborted, or you wait for the lock.
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.ILockHandler.EventLoop">
+             <summary>
+             This is called at the end of each attempt to lock everything.  If you're implementing
+             this as a single threaded GUI you can process events here.  We won't make another lock attempt
+             until this method exits, and .1 seconds has passed (to avoid spamming the database).
+            
+             If you do nothing with this we'll wait .1 seconds and attempt to lock again.
+            
+             Your return here decides if we continue trying for the lock.
+            
+             This will not be called if we successfully lock everything on the first attempt.
+             </summary>
+             <returns>true if you want to continue waiting.</returns>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.MemberEndHandle">
+             <summary>A handle specifically for member ends.  This can also be passed
+             in place of a MemberHandle, in which case it will point at the member
+             for this end.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.getCPtr(DesignData.SDS2.Database.MemberEndHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.#ctor(System.Int32,DesignData.SDS2.Database.MemberEnd)">
+             <summary>Create a new member end handle from the member number and end</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.GetEnd">
+             <summary>The enumeration value representing this end of a member</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberEndHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.MemberEndHandle.End">
+             <summary>The enumeration value representing this end of a member</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.DrawingHandle">
+             <summary>A TableIndexHandle specific for tables which contain drawings</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandle.getCPtr(DesignData.SDS2.Database.DrawingHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandle.#ctor(DesignData.SDS2.Database.TableWithDrawings,System.Int32)">
+             <param name="table">See the Table enumeration for possible values.</param>
+             <param name="indexInTable">The index into that table.</param>
+             <remarks>It's recommended that you avoid constructing handles in this manner.  If you need a long lasting identifier for an element in the SDS2 database you should find a GUID on that item and search for it to look it back up.</remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.MemberHandleList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandleList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandleList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.MemberHandleList.MemberHandleListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandleList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandleList.#ctor(DesignData.SDS2.Database.MemberHandleList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MemberHandleList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.DrawingHandleList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandleList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandleList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.DrawingHandleList.DrawingHandleListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandleList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandleList.#ctor(DesignData.SDS2.Database.DrawingHandleList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DrawingHandleList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.TableWithDrawings">
+              
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.Detail">
+             <summary>
+             The major or member piecemark table.  This table contains a set of
+             major marks, and the associated drawings if they exist.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.DetailSheet">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.ErectionSheet">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.ErectionView">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.GatherSheet">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.JobStandard">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.JobSymbols">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.MemberPiecemark">
+             <summary>
+             Another name for Detail
+             </summary>
+             <see cref="F:DesignData.SDS2.Database.Table.Detail" />
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.ReferenceDrawing">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.SheetOutline">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.TableWithDrawings.Submaterial">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.NoteHandleList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandleList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandleList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.NoteHandleList.NoteHandleListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandleList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandleList.#ctor(DesignData.SDS2.Database.NoteHandleList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandleList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.MemberEnd">
+             <summary>Enumeration representing the ends of a two point member</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.MemberEnd.Left">
+             <summary>The left most</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.MemberEnd.Right">
+             <summary>The right most</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Identifier">
+             <summary>
+             The name of a job and name of the repository it
+             can be found in.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Identifier.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Identifier.getCPtr(DesignData.SDS2.Database.Identifier)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Identifier.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Identifier.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Identifier.GetName">
+             <summary>
+             The name of the job and repository.
+             </summary>
+             <value>
+             A UTF-8 encoded string
+             </value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Identifier.Name">
+             <summary>
+             The name of the job and repository.
+             </summary>
+             <value>
+             A UTF-8 encoded string
+             </value>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.MaterialFileHandle">
+             <summary>A handle for a material file</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.getCPtr(DesignData.SDS2.Database.MaterialFileHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.#ctor">
+             <summary>A material file handle to the current job's material file</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.#ctor(System.String)">
+             <summary>A material file handle to a material file outside of the current job</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialFileHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.DataDirectory">
+             <summary>
+             Before jobs can be accessed or job repositories can be listed you
+             must choose a data directory.  It contains needed setup
+             data for SDS2.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DataDirectory.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DataDirectory.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DataDirectory.Open(System.String)">
+             <summary>
+             Make this the current data directory in this process.  This must be
+             done before you can list job repositories.
+             </summary>
+             <returns>true if the job is open, false if we were unable to open the job.</returns>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.DataDirectory.GetDefault">
+             <summary>The current default data directory, to be passed to
+             DataDirectory.Open</summary>
+             <remarks>If no valid data directory can be found, this will return an
+             empty string.</remarks>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.DataDirectory.Default">
+             <summary>The current default data directory, to be passed to
+             DataDirectory.Open</summary>
+             <remarks>If no valid data directory can be found, this will return an
+             empty string.</remarks>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Database">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.IdentifierList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.IdentifierList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.IdentifierList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.IdentifierList.IdentifierListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.IdentifierList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.IdentifierList.#ctor(DesignData.SDS2.Database.IdentifierList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.IdentifierList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.FabricatorHandle">
+             <summary>A handle to a fabricator</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.getCPtr(DesignData.SDS2.Database.FabricatorHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.FabricatorHandle.#ctor">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.GroupMemberHandle">
+             <summary>
+             A handle specifically for group members in the SDS2 database
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandle.getCPtr(DesignData.SDS2.Database.GroupMemberHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandle.GetCustomPropertyMapHandle">
+             <summary>
+             A handle to the custom properties for this member.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.GroupMemberHandle.CustomPropertyMapHandle">
+             <summary>
+             A handle to the custom properties for this member.
+             </summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.TransactionFailureCode">
+             <summary>Reasons a transaction may fail to commit</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.LockedByAnotherUser">
+             <summary>A needed element was already locked by another process,
+             possibly another process under this current user or one from
+             another user.
+            
+             This can be, somewhat, addressed by implementingw or using a
+             LockHandler which will wait until that element can be locked.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.PiecemarkIsFrozen">
+             <summary>The operation could not proceed because it would require
+             changing a member with a frozen piecemark.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.ModelComplete">
+             <summary>The operation could not proceed because it would change
+             a member which is model complete (restrictive)</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.StationRestriction">
+             <summary>The current station type, or license, does not allow
+             this type of change.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.InvalidStitchPlateValue">
+             <summary>The user stitch plate settings given are not necessarily
+             possible, so the change is being rejected.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.InvalidMemberOrientation">
+             <summary>Attempt to set an orientation flag for a member which
+             SDS2 does not support.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.LockedEnd">
+             <summary>Attempt to change a member end which is locked (not a
+             temporary lock to prevent two users from changing something at
+             the same time, but a user lock flag on the end is set to prevent
+             future modifications).</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.KeepPiecemarkDisallowed">
+             <summary>An attempt was made to perform a keep piecemark
+             operation, but in this case it cannot be allowed.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.BrokenApartMemberGroupingViolation">
+             <summary>An attempt was made to remove part of a linked member
+             (generally these are the pieces of a broken apart member) from a
+             group without removing all of the other members in that
+             link.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.ConnectionDesignFailure">
+             <summary>Connection design failed.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.DefunctModifier">
+             <summary>Usually an internal issue, an element of the transaction seems
+             to have disappeared during commit.</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.TransactionFailureCode.MembersOverlap">
+             <summary>The changes made would cause two members to overlap in
+             an illegal way.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Version">
+             <summary>
+             Version reflects how SDS2 is versioned internally.  These version numbers
+             are not like assembly version numbers or semantic version numbers, are only
+             loosely correlated with marketing versions, but reflect existing internal
+             practice at SDS2.
+             </summary>
+            
+             <remarks>
+             <para>
+             Version numbers are important to understand (A) capabilities of SDS2 and
+             the C# interface and (B) compatible project data versions.
+             </para>
+            
+             <para>
+             Generally, over time, Program and Data version numbers of SDS2 increase.
+             </para>
+            
+             <para>
+             Generally, when a new marketing version number is seen, the most
+             significant "minor" digit is incremented, overflowing to the "major" digit.
+             </para>
+            
+             <para>
+             Generally, Program version is equal to or greater than Data version.
+             </para>
+            
+             <para>
+             Projects with data versions equal to Version.DataVersion can be accessed
+             freely, while projects with older data versions can be irrevocably converted
+             to the current data version.
+             </para>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Version.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.GetMajor">
+             <summary>Major version releases, increments of this are likely to come with breaking API changes.</summary>
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.GetMinor">
+             <summary>Minor version changes may also contain breaking API changes, but some will not.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.GetRevision">
+             <summary>Minor revisions that will not contain breaking API changes.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.GetProgramVersion">
+             <summary>The program version of the loaded SDS2 DLL.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.GetDataVersion">
+             <summary>The data version written by the loaded SDS2 DLL.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Version.ProgramVersion">
+             <summary>The program version of the loaded SDS2 DLL.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Version.DataVersion">
+             <summary>The data version written by the loaded SDS2 DLL.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Version.Major">
+             <summary>Major version releases, increments of this are likely to come with breaking API changes.</summary>
+                  
+            </member>
+        <member name="P:DesignData.SDS2.Database.Version.Minor">
+             <summary>Minor version changes may also contain breaking API changes, but some will not.</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Version.Revision">
+             <summary>Minor revisions that will not contain breaking API changes.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Version.ToString">
+            
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.LockHandler">
+             <summary>
+             This interface defines the callbacks that must be provided for locking
+             feedback.  Either informing a user, or making decisions without user intervention,
+             about how to handle situations where a desired piece cannot be locked.
+            
+             The only choices are to wait for a lock or give up, if any locks couldn't be made.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.getCPtr(DesignData.SDS2.Database.LockHandler)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.LockSucceeded(DesignData.SDS2.Database.TableIndexHandle)">
+             <summary>
+             This is called whenever we're able to lock an item.  This will be called at most once
+             per item.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.LockFailed(DesignData.SDS2.Database.TableIndexHandle,System.String)">
+             <summary>
+             This is called whenever we try to lock an item and can't get the lock.  This may
+             be called over and over and over.
+             </summary>
+             <param name="databaseItem">The item we could not lock</param>
+             <param name="userMessage">A helpful message you can display to the user to explain why it can't be locked.</param>
+             <remarks>
+             At this point it's too late to decide you don't need a modification if you can't
+             get a lock.  Either the whole transaction has to be aborted, or you wait for the lock.
+             </remarks>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.LockHandler.EventLoop">
+             <summary>
+             This is called at the end of each attempt to lock everything.  If you're implementing
+             this as a single threaded GUI you can process events here.  We won't make another lock attempt
+             until this method exits, and .1 seconds has passed (to avoid spamming the database).
+            
+             If you do nothing with this we'll wait .1 seconds and attempt to lock again.
+            
+             Your return here decides if we continue trying for the lock.
+            
+             This will not be called if we successfully lock everything on the first attempt.
+             </summary>
+             <returns>true if you want to continue waiting.</returns>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.NoteHandle">
+             <summary>
+             A note handle in the SDS2 database
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandle.getCPtr(DesignData.SDS2.Database.NoteHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.NoteHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.GridLineHandle">
+             <summary>
+             A handle grid lines in the SDS2 database
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandle.getCPtr(DesignData.SDS2.Database.GridLineHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GridLineHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.JobSetupHandle">
+             <summary>A handle to a job setup object</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.getCPtr(DesignData.SDS2.Database.JobSetupHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.JobSetupHandle.#ctor">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Table">
+              
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ABM">
+             <summary>
+             The advanced bill of material table.  Contains information about
+             advanced bill of material reports.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Arch">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Assembly">
+             <summary>
+             The assembly table.  This contains collections of
+             bolts, welds, and material that can quickly be loaded as a member
+             or loaded onto an existing member.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.CNC">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ConcTorsion">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.CranePosition">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.CrawlerCrane">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.DesignGroup">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Detail">
+             <summary>
+             The major or member piecemark table.  This table contains a set of
+             major marks, and the associated drawings if they exist.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.DetailSheet">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.DistTorsion">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.EadElements">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.EadNodes">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.EigenPair">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ErectionSheet">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ErectionView">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.FabSetup">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.FlexibleDiaphram">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Floor">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ForceFunction">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.GatherSheet">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.GlobalSheets">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.GlobalStandard">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.GlobalSymbols">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.GroupMember">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Invalid">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Job">
+             Used to specify a job lock
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.JobMaterials">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.JobSetup">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.JobStandard">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.JobSymbols">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Load">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Member">
+             <summary>
+             This table contains general member information.  User inputs, all
+             attached materials.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.MemberOctree">
+             <summary>
+             An internal table for the shared spatial index of all members.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.MemberPiecemark">
+             <summary>
+             Another name for Detail
+             </summary>
+             <see cref="F:DesignData.SDS2.Database.Table.Detail" />
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ModelRestraint">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.NodalDisp">
+             <summary>
+             This table contains information about member pins.
+             </summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Note">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.OutputConfig">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ParametricName">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.PythonObject">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.ReferenceDrawing">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.RigidDiaphram">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Schema">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Sequence">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.SheetOutline">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Structure">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Submaterial">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.Symbols">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.TowerCrane">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.UserDefinedConn">
+                  
+            </member>
+        <member name="F:DesignData.SDS2.Database.Table.WindLoad">
+                  
+            </member>
+        <member name="T:DesignData.SDS2.Database.Repository">
+             <summary>
+             A place where SDS2 jobs are stored.  Jobs are accessed
+             in this repository by name.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.getCPtr(DesignData.SDS2.Database.Repository)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.GetAllRepositories">
+             <summary>
+             Return a list of all job repositories on the system.  Users can
+             have multiple repositories on various database backends.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.GetDefault">
+             <summary>This gets the default job repository for the user
+             running your software</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.GetName">
+             <summary>
+             The name of the job repository
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.GetURL">
+             <summary>
+             The URI for this repository.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.GetShadowPath">
+             <summary>
+             The URI for this repository.
+             </summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.GetJobIdentifiers">
+             <summary>
+             A list of all the jobs in this repository.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Repository.Name">
+             <summary>
+             The name of the job repository
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Repository.URL">
+             <summary>
+             The URI for this repository.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Repository.ShadowPath">
+             <summary>
+             The URI for this repository.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Repository.JobIdentifiers">
+             <summary>
+             A list of all the jobs in this repository.
+             </summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Repository.Default">
+             <summary>This gets the default job repository for the user
+             running your software</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Repository.#ctor">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.RepositoryList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.RepositoryList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.RepositoryList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.RepositoryList.RepositoryListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.RepositoryList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.RepositoryList.#ctor(DesignData.SDS2.Database.RepositoryList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.RepositoryList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.GroupMemberHandleList.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandleList.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandleList.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.GroupMemberHandleList.GroupMemberHandleListEnumerator">
+             Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+             whenever the collection is modified. This has been done for changes in the size of the
+             collection but not when one of the elements of the collection is modified as it is a bit
+             tricky to detect unmanaged code that modifies the collection under our feet.
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandleList.#ctor">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandleList.#ctor(DesignData.SDS2.Database.GroupMemberHandleList)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.GroupMemberHandleList.#ctor(System.Int32)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.MaterialHandle">
+             <summary>A handle specifically for materials.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.getCPtr(DesignData.SDS2.Database.MaterialHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.#ctor(DesignData.SDS2.Database.MemberHandle,System.Int32,System.Nullable{System.Guid})">
+             <summary>Create a new material handle from a member handle, index
+             of the material, and guid.  Both the materialIndex and the guid
+             must be correct.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.GetMember">
+             <summary>The member this material is on</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.GetGuid">
+             <summary>The uuid or guid representing this material</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.MaterialHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.MaterialHandle.Member">
+             <summary>The member this material is on</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.MaterialHandle.Guid">
+             <summary>The uuid or guid representing this material</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.LicenseReturnCode">
+             <summary>Codes indicating the state of licensing after a checkout attempt</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseReturnCode.BadCredentials">
+             <summary>No license was given because the username or password did not match</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseReturnCode.Canceled">
+             <summary>The user has canceled the operation</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseReturnCode.NoLicense">
+             <summary>The user does not have this license, or does not have any left to checkout</summary>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.LicenseReturnCode.Licensed">
+             <summary>Success, a license has been granted and used</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.WeldHandle">
+             <summary>A handle specifically for welds.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.#ctor(System.IntPtr,System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.getCPtr(DesignData.SDS2.Database.WeldHandle)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.#ctor(DesignData.SDS2.Database.MemberHandle,System.Nullable{System.Guid})">
+             <summary>Create a weld handle on a member, with the member handle
+             and a guid to find the weld.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.GetGuid">
+             <summary>The uuid or guid representing this weld</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.GetMember">
+             <summary>The member this weld is on.</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.GetHashCode">
+                  
+            </member>
+        <member name="M:DesignData.SDS2.Database.WeldHandle.Equals(System.Object)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.WeldHandle.Guid">
+             <summary>The uuid or guid representing this weld</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.WeldHandle.Member">
+             <summary>The member this weld is on.</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.Licensing">
+             <summary>A place for functions related to SDS2 licensing.</summary>
+             <remarks>
+             The normal program start procedure looks like:
+             <code>
+             if(!Licensing.HasStoredCredentials)
+             {
+                 string userName = .. prompt for user name;
+                 string password = .. prompt for password;
+                 Licensing.SetCredentials(userName, password);
+             }
+             Licensing.Checkout();
+             </code>
+             </remarks>
+            
+            </member>
+        <member name="F:DesignData.SDS2.Database.Licensing.swigCMemOwn">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.Finalize">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.Dispose(System.Boolean)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.GetIsLicensed">
+             <summary>Returns true if the user has a valid license to run the API</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.GetHasStoredCredentials">
+             <summary>Check if SDS2 already has working stored credentials to use,
+             if it does you do not need to prompt and get credentials</summary>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.SetCredentials(System.String,System.String)">
+             <summary>If SDS2 didn't have stored credentials, and you've prompted
+             the user for their 10duke login, you can then pass these credentials to SDS2
+             and it will use them to checkout a license</summary>
+             <return>true if the credentials worked and are accepted by 10duke,
+             false if not, in which case these credentials are immediately deleted.</return>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.Checkout">
+             <summary>Checkout your license for the full run of your program.</summary>
+             <remarks>There is no checkin, this call is just needed to give you time to prompt
+             for credentials if needed</remarks>
+             <return>The result of the checkout attempt, only Licensed indicates a success.
+             Canceled is never a result of this method as there is no user interaction.</return>
+            
+            </member>
+        <member name="M:DesignData.SDS2.Database.Licensing.HasFeature(DesignData.SDS2.Database.LicenseFeatures)">
+             <summary>Returns true if the user has a valid license to run the given API feature</summary>
+             <value>The API feature to be checked.</value>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Licensing.IsLicensed">
+             <summary>Returns true if the user has a valid license to run the API</summary>
+            
+            </member>
+        <member name="P:DesignData.SDS2.Database.Licensing.HasStoredCredentials">
+             <summary>Check if SDS2 already has working stored credentials to use,
+             if it does you do not need to prompt and get credentials</summary>
+            
+            </member>
+        <member name="T:DesignData.SDS2.Database.ImmediateLockHandler">
+             <summary>
+              An ILockHandler that fails immediately when a lock cannot
+              be taken.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Database.ImmediateLockHandler.#ctor">
+             <summary>
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Database.ImmediateLockHandler.LockSucceeded(DesignData.SDS2.Database.TableIndexHandle)">
+             <summary>
+              Nothing special is done for a successful lock.
+             </summary>
+             <param name="databaseItem" />
+            </member>
+        <member name="M:DesignData.SDS2.Database.ImmediateLockHandler.LockFailed(DesignData.SDS2.Database.TableIndexHandle,System.String)">
+             <summary>
+              Once this has been called, we will abort on the next call
+              to EventLoop.  This way, as soon as we fail to get any lock
+              we abort.
+             </summary>
+             <param name="databaseItem" />
+             <param name="userMessage" />
+            </member>
+        <member name="M:DesignData.SDS2.Database.ImmediateLockHandler.EventLoop">
+             <summary>
+             </summary>
+            </member>
+    </members>
+</doc>

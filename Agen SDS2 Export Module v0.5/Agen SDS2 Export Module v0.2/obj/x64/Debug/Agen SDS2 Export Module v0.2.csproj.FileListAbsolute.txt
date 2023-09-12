@@ -1,0 +1,153 @@
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe.config
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.AssemblyReference.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Form1.resources
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Properties.Resources.resources
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.GenerateResource.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CoreCompileInputs.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CopyComplete
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.2\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe.config
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.AssemblyReference.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Form1.resources
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Properties.Resources.resources
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.GenerateResource.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CoreCompileInputs.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CopyComplete
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.3\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe.config
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.dll
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.xml
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.AssemblyReference.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Form1.resources
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Properties.Resources.resources
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.GenerateResource.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CoreCompileInputs.cache
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CopyComplete
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Api\Agen SDS2 Export Module v0.4\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Setup.resources
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe.config
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.dll
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.xml
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.AssemblyReference.cache
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Form1.resources
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Properties.Resources.resources
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Setup.resources
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.GenerateResource.cache
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CoreCompileInputs.cache
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CopyComplete
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe.config
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\Agen SDS2 Export Module v0.2.pdb
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.dll
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Database.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Detail.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Exceptions.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Linker.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Model.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Primitives.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Python.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.Setup.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\bin\x64\Debug\DesignData.SDS2.WinForms.xml
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.AssemblyReference.cache
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Form1.resources
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Properties.Resources.resources
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen_SDS2_Export_Module_v0._2.Setup.resources
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.GenerateResource.cache
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CoreCompileInputs.cache
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.csproj.CopyComplete
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.exe
+C:\Users\Gokme\Desktop\11.08\Agen SDS2 Export Module v0.5\Agen SDS2 Export Module v0.2\obj\x64\Debug\Agen SDS2 Export Module v0.2.pdb

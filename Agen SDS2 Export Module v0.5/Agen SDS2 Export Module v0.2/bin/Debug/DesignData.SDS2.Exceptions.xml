@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesignData.SDS2.Exceptions</name>
+    </assembly>
+    <members>
+        <member name="T:DesignData.SDS2.Exceptions.JobNotOpenException">
+               <summary>
+               This exception is thrown when a property or method is accessed on
+               an object from a job that is not the currently opened job.
+               </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.JobNotOpenException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.NotAddedException">
+               <summary>
+               This is thrown when an attempt to set an object's data without
+               first adding it to a transaction.  It's necessary to add things to
+               transactions so they can be locked and refreshed.
+               </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.NotAddedException.#ctor(System.String)">
+            
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.NotLicensedException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.InvalidValueException">
+            <summary>
+            Thrown when a value given does not meet the validation requirements.
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.InvalidValueException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.CustomPropertyMissingException">
+               <summary>
+               Thrown when a requested custom property is not in the
+               custom property schema for this job.
+               </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.CustomPropertyMissingException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.CustomPropertyTypeMismatchException">
+               <summary>
+               Thrown when a requested custom property is in the
+               custom property schema for this job, but the type is not
+               what was requested.
+               </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.CustomPropertyTypeMismatchException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.InvalidPolygonException">
+               <summary>
+               Thrown when a given polygon is not valid.
+               </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.InvalidPolygonException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.MaterialException">
+                <summary>
+                Thrown for various material-related errors.
+                </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.MaterialException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.NotLockedException">
+            <summary>This is thrown when you attempt to access or modify something that's not locked
+            primarily when under a writeable Transaction.  To resolve this you usually need to add
+            that object to the transaction:  Transaction.Add(object)</summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.NotLockedException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.NoProcessLicenseException">
+            <summary>This is thrown when you attempt to process members from python/C# code when
+            the workstation does not have the API_PROCESSING license featrue.  To resolve this you
+            need to either remove transaction commits with processMembers: true or acquire the
+            API_PROCESSING license feature</summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.NoProcessLicenseException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.InvalidOperationException">
+            <summary>When an operation constraint is not satisfied, usually
+            something like: not using a Transaction when setting properties, or
+            failing to .Add an object and .Lock before modifing any object.</summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.InvalidOperationException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.InvalidHandleException">
+            <summary>
+            Thrown when retrieving a Handle's object from the database, but
+            the object does not exist in the database.
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.InvalidHandleException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.PiecemarkExistsException">
+            <summary>
+            Thrown when piecemark assigned is already in use by a different object.
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.PiecemarkExistsException.#ctor(System.String)">
+            
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.PythonException">
+            <summary>
+            Thrown when there's an exception in a python call
+            </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.PythonException.#ctor(System.String,System.String,System.dynamic,System.dynamic)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Exceptions.PythonException.PythonTraceback">
+             <summary>
+              The python stack trace at the exception throw site
+             </summary>
+            </member>
+        <member name="P:DesignData.SDS2.Exceptions.PythonException.PythonExceptionInstance">
+             <summary>
+              The underlying python exception that was thrown.  This can
+              be null if a python exception wasn't thrown, but this
+              exception indicates an argument or return value could not
+              be marshalled or an attempt was made to call a
+              non-callable object.
+             </summary>
+            </member>
+        <member name="P:DesignData.SDS2.Exceptions.PythonException.PythonExceptionType">
+             <summary>
+              The type of the underlying python exception (as a python object).
+             </summary>
+            </member>
+        <member name="T:DesignData.SDS2.Exceptions.ProgramException">
+             <summary>
+               Thrown when there's an internal error in SDS/2's native implementation.
+             </summary>
+            </member>
+        <member name="M:DesignData.SDS2.Exceptions.ProgramException.#ctor(System.String,System.String)">
+            
+            </member>
+        <member name="P:DesignData.SDS2.Exceptions.ProgramException.Backtrace">
+             <summary>
+              The native backtrace that led to this.  This can be helpful
+              when reporting this, so that SDS/2 programmers can see how we
+              ran into this error.
+             </summary>
+            
+            </member>
+    </members>
+</doc>
